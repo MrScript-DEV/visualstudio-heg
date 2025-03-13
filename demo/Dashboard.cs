@@ -37,5 +37,20 @@ namespace demo
             manageTickets.ShowDialog();
             this.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpStats_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
