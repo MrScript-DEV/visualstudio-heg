@@ -31,6 +31,7 @@
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.gestionDesTicketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesUtilisateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDesRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +41,8 @@
             this.msMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionDesTicketsToolStripMenuItem,
-            this.gestionDesUtilisateursToolStripMenuItem});
+            this.gestionDesUtilisateursToolStripMenuItem,
+            this.gestionDesRolesToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.Size = new System.Drawing.Size(800, 33);
@@ -61,6 +63,12 @@
             this.gestionDesUtilisateursToolStripMenuItem.Size = new System.Drawing.Size(210, 29);
             this.gestionDesUtilisateursToolStripMenuItem.Text = "Gestion des utilisateurs";
             this.gestionDesUtilisateursToolStripMenuItem.Click += new System.EventHandler(this.gestionDesUtilisateursToolStripMenuItem_Click);
+            // 
+            // gestionDesRolesToolStripMenuItem
+            // 
+            this.gestionDesRolesToolStripMenuItem.Name = "gestionDesRolesToolStripMenuItem";
+            this.gestionDesRolesToolStripMenuItem.Size = new System.Drawing.Size(164, 29);
+            this.gestionDesRolesToolStripMenuItem.Text = "Gestion des roles";
             // 
             // frmDashboard
             // 
@@ -83,5 +91,6 @@
         private System.Windows.Forms.MenuStrip msMenu;
         private System.Windows.Forms.ToolStripMenuItem gestionDesTicketsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDesUtilisateursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDesRolesToolStripMenuItem;
     }
 }
