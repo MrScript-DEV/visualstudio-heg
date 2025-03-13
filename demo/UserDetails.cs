@@ -25,6 +25,8 @@ namespace demo
             txtEmail.Text = email;
             cboRole.Text = role;
 
+            grpUserTickets.Visible = !isNew;
+            dgvUserTickets.Visible = !isNew;
             btnCreate.Visible = isNew;
             btnUpdate.Visible = !isNew;
             btnDelete.Visible = !isNew;

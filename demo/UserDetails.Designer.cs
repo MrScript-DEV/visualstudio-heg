@@ -32,16 +32,25 @@
             this.txtLastname = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.grpUsersDetails = new System.Windows.Forms.GroupBox();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.cboRole = new System.Windows.Forms.ComboBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblLastname = new System.Windows.Forms.Label();
             this.lblFirstname = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
-            this.cboRole = new System.Windows.Forms.ComboBox();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
+            this.dgvUserTickets = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sujet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nbMessages = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grpUserTickets = new System.Windows.Forms.GroupBox();
             this.grpUsersDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserTickets)).BeginInit();
+            this.grpUserTickets.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtFirstname
@@ -78,12 +87,53 @@
             this.grpUsersDetails.Controls.Add(this.txtFirstname);
             this.grpUsersDetails.Controls.Add(this.txtLastname);
             this.grpUsersDetails.Controls.Add(this.txtEmail);
-            this.grpUsersDetails.Location = new System.Drawing.Point(44, 30);
+            this.grpUsersDetails.Location = new System.Drawing.Point(12, 12);
             this.grpUsersDetails.Name = "grpUsersDetails";
             this.grpUsersDetails.Size = new System.Drawing.Size(436, 386);
             this.grpUsersDetails.TabIndex = 4;
             this.grpUsersDetails.TabStop = false;
             this.grpUsersDetails.Text = "Informations";
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Location = new System.Drawing.Point(133, 306);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(178, 52);
+            this.btnCreate.TabIndex = 11;
+            this.btnCreate.Text = "Créer";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(235, 306);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(178, 52);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Text = "Supprimer";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // cboRole
+            // 
+            this.cboRole.FormattingEnabled = true;
+            this.cboRole.Items.AddRange(new object[] {
+            "Admin",
+            "Support",
+            "Utilisateur"});
+            this.cboRole.Location = new System.Drawing.Point(186, 228);
+            this.cboRole.Name = "cboRole";
+            this.cboRole.Size = new System.Drawing.Size(227, 28);
+            this.cboRole.TabIndex = 9;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(24, 306);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(178, 52);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "Mettre à jour";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lblRole
             // 
@@ -121,58 +171,91 @@
             this.lblFirstname.TabIndex = 4;
             this.lblFirstname.Text = "Prénom";
             // 
-            // btnUpdate
+            // dgvUserTickets
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(24, 306);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(178, 52);
-            this.btnUpdate.TabIndex = 8;
-            this.btnUpdate.Text = "Mettre à jour";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.dgvUserTickets.AllowUserToAddRows = false;
+            this.dgvUserTickets.AllowUserToDeleteRows = false;
+            this.dgvUserTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserTickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.Sujet,
+            this.priority,
+            this.status,
+            this.nbMessages});
+            this.dgvUserTickets.Location = new System.Drawing.Point(16, 22);
+            this.dgvUserTickets.Name = "dgvUserTickets";
+            this.dgvUserTickets.ReadOnly = true;
+            this.dgvUserTickets.RowHeadersWidth = 62;
+            this.dgvUserTickets.RowTemplate.Height = 28;
+            this.dgvUserTickets.Size = new System.Drawing.Size(815, 349);
+            this.dgvUserTickets.TabIndex = 5;
             // 
-            // cboRole
+            // id
             // 
-            this.cboRole.FormattingEnabled = true;
-            this.cboRole.Items.AddRange(new object[] {
-            "Admin",
-            "Support",
-            "Utilisateur"});
-            this.cboRole.Location = new System.Drawing.Point(186, 228);
-            this.cboRole.Name = "cboRole";
-            this.cboRole.Size = new System.Drawing.Size(227, 28);
-            this.cboRole.TabIndex = 9;
+            this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 8;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 150;
             // 
-            // btnDelete
+            // Sujet
             // 
-            this.btnDelete.Location = new System.Drawing.Point(235, 306);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(178, 52);
-            this.btnDelete.TabIndex = 10;
-            this.btnDelete.Text = "Supprimer";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.Sujet.HeaderText = "subject";
+            this.Sujet.MinimumWidth = 8;
+            this.Sujet.Name = "Sujet";
+            this.Sujet.ReadOnly = true;
+            this.Sujet.Width = 150;
             // 
-            // btnCreate
+            // priority
             // 
-            this.btnCreate.Location = new System.Drawing.Point(133, 306);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(178, 52);
-            this.btnCreate.TabIndex = 11;
-            this.btnCreate.Text = "Créer";
-            this.btnCreate.UseVisualStyleBackColor = true;
+            this.priority.HeaderText = "Priorité";
+            this.priority.MinimumWidth = 8;
+            this.priority.Name = "priority";
+            this.priority.ReadOnly = true;
+            this.priority.Width = 150;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Statut";
+            this.status.MinimumWidth = 8;
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Width = 150;
+            // 
+            // nbMessages
+            // 
+            this.nbMessages.HeaderText = "Nb. messages";
+            this.nbMessages.MinimumWidth = 8;
+            this.nbMessages.Name = "nbMessages";
+            this.nbMessages.ReadOnly = true;
+            this.nbMessages.Width = 150;
+            // 
+            // grpUserTickets
+            // 
+            this.grpUserTickets.Controls.Add(this.dgvUserTickets);
+            this.grpUserTickets.Location = new System.Drawing.Point(464, 21);
+            this.grpUserTickets.Name = "grpUserTickets";
+            this.grpUserTickets.Size = new System.Drawing.Size(852, 377);
+            this.grpUserTickets.TabIndex = 6;
+            this.grpUserTickets.TabStop = false;
+            this.grpUserTickets.Text = "Tickets";
             // 
             // frmUserDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 450);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1334, 413);
+            this.Controls.Add(this.grpUserTickets);
             this.Controls.Add(this.grpUsersDetails);
             this.Name = "frmUserDetails";
             this.Text = "Détails de l\'utilisateur";
             this.Load += new System.EventHandler(this.frmUserDetails_Load);
             this.grpUsersDetails.ResumeLayout(false);
             this.grpUsersDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserTickets)).EndInit();
+            this.grpUserTickets.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -192,5 +275,12 @@
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.DataGridView dgvUserTickets;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sujet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priority;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nbMessages;
+        private System.Windows.Forms.GroupBox grpUserTickets;
     }
 }
