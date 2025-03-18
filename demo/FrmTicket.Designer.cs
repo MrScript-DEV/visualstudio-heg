@@ -49,7 +49,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.grpMessages = new System.Windows.Forms.GroupBox();
             this.cboSupportAgent = new System.Windows.Forms.ComboBox();
-            this.lblChangeSupport = new System.Windows.Forms.Label();
+            this.lblChangeSupportAgent = new System.Windows.Forms.Label();
             this.grpTicketInfo.SuspendLayout();
             this.grpSupportInfo.SuspendLayout();
             this.grpUser.SuspendLayout();
@@ -77,7 +77,7 @@
             // 
             // grpSupportInfo
             // 
-            this.grpSupportInfo.Controls.Add(this.lblChangeSupport);
+            this.grpSupportInfo.Controls.Add(this.lblChangeSupportAgent);
             this.grpSupportInfo.Controls.Add(this.cboSupportAgent);
             this.grpSupportInfo.Controls.Add(this.txtLastnameSupport);
             this.grpSupportInfo.Controls.Add(this.lblLastnameSupport);
@@ -276,14 +276,14 @@
             this.cboSupportAgent.Size = new System.Drawing.Size(237, 28);
             this.cboSupportAgent.TabIndex = 14;
             // 
-            // lblChangeSupport
+            // lblChangeSupportAgent
             // 
-            this.lblChangeSupport.AutoSize = true;
-            this.lblChangeSupport.Location = new System.Drawing.Point(15, 42);
-            this.lblChangeSupport.Name = "lblChangeSupport";
-            this.lblChangeSupport.Size = new System.Drawing.Size(65, 20);
-            this.lblChangeSupport.TabIndex = 15;
-            this.lblChangeSupport.Text = "Attribué";
+            this.lblChangeSupportAgent.AutoSize = true;
+            this.lblChangeSupportAgent.Location = new System.Drawing.Point(15, 42);
+            this.lblChangeSupportAgent.Name = "lblChangeSupportAgent";
+            this.lblChangeSupportAgent.Size = new System.Drawing.Size(65, 20);
+            this.lblChangeSupportAgent.TabIndex = 15;
+            this.lblChangeSupportAgent.Text = "Attribué";
             // 
             // frmTicket
             // 
@@ -328,7 +328,7 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox grpMessages;
-        private System.Windows.Forms.Label lblChangeSupport;
+        private System.Windows.Forms.Label lblChangeSupportAgent;
         private System.Windows.Forms.ComboBox cboSupportAgent;
     }
 }
