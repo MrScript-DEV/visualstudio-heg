@@ -15,6 +15,7 @@ namespace demo
         public frmDashboard()
         {
             InitializeComponent();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -49,6 +50,11 @@ namespace demo
         }
 
         private void grpStats_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmDashboard_Load(object sender, EventArgs e)
         {
 
         }

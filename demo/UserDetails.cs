@@ -18,6 +18,8 @@ namespace demo
         public frmUserDetails(string id = "", string firstname = "", string lastname = "", string email = "", string role = "Utilisateur", bool isNew = true)
         {
             InitializeComponent();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
             this.isNew = isNew;
 
             txtFirstname.Text = firstname;

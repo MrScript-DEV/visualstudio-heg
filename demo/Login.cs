@@ -16,6 +16,7 @@ namespace demo
         public frmLogin()
         {
             InitializeComponent();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -35,6 +36,11 @@ namespace demo
                 dashboard.ShowDialog();
                 this.Show();
             }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -15,7 +15,7 @@ namespace demo
         public frmManageUsers()
         {
             InitializeComponent();
-
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 
             string[] row = { "1", "John", "Doe", "johndoe@example.com", "Admin" };
 
@@ -45,6 +45,11 @@ namespace demo
         }
 
         private void frmManageUsers_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

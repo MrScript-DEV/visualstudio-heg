@@ -15,6 +15,32 @@ namespace demo
         public frmManageTicket()
         {
             InitializeComponent();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            string[] row = { "1", "John Doe", "Problème de connexion", "Moyenne", "5", "Ouvert" };
+
+            dgvTickets.Rows.Add(row);
+
+        }
+
+        private void dgvTickets_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvTickets.Rows[e.RowIndex];
+                string id = row.Cells["id"].Value.ToString();
+                frmTicket ticket = new frmTicket(id);
+                ticket.ShowDialog();
+            }
+        }
+
+        private void frmManageTicket_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -103,6 +103,7 @@
             this.Controls.Add(this.lblEmail);
             this.Name = "frmLogin";
             this.Text = "Connexion";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
