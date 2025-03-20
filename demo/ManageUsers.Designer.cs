@@ -44,6 +44,10 @@
             // 
             this.dgvUsers.AllowUserToAddRows = false;
             this.dgvUsers.AllowUserToDeleteRows = false;
+            this.dgvUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -58,8 +62,8 @@
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowHeadersWidth = 62;
             this.dgvUsers.RowTemplate.Height = 28;
-            this.dgvUsers.Size = new System.Drawing.Size(1384, 506);
-            this.dgvUsers.TabIndex = 0;
+            this.dgvUsers.Size = new System.Drawing.Size(840, 506);
+            this.dgvUsers.TabIndex = 1;
             this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
             // 
@@ -69,7 +73,7 @@
             this.id.MinimumWidth = 8;
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.Width = 150;
+            this.id.Width = 59;
             // 
             // firstname
             // 
@@ -77,7 +81,6 @@
             this.firstname.MinimumWidth = 8;
             this.firstname.Name = "firstname";
             this.firstname.ReadOnly = true;
-            this.firstname.Width = 150;
             // 
             // lastname
             // 
@@ -85,7 +88,7 @@
             this.lastname.MinimumWidth = 8;
             this.lastname.Name = "lastname";
             this.lastname.ReadOnly = true;
-            this.lastname.Width = 150;
+            this.lastname.Width = 78;
             // 
             // email
             // 
@@ -93,7 +96,7 @@
             this.email.MinimumWidth = 8;
             this.email.Name = "email";
             this.email.ReadOnly = true;
-            this.email.Width = 150;
+            this.email.Width = 84;
             // 
             // role
             // 
@@ -101,7 +104,7 @@
             this.role.MinimumWidth = 8;
             this.role.Name = "role";
             this.role.ReadOnly = true;
-            this.role.Width = 150;
+            this.role.Width = 78;
             // 
             // nbTicketInProgress
             // 
@@ -109,7 +112,7 @@
             this.nbTicketInProgress.MinimumWidth = 8;
             this.nbTicketInProgress.Name = "nbTicketInProgress";
             this.nbTicketInProgress.ReadOnly = true;
-            this.nbTicketInProgress.Width = 150;
+            this.nbTicketInProgress.Width = 130;
             // 
             // nbTicketsClose
             // 
@@ -117,14 +120,14 @@
             this.nbTicketsClose.MinimumWidth = 8;
             this.nbTicketsClose.Name = "nbTicketsClose";
             this.nbTicketsClose.ReadOnly = true;
-            this.nbTicketsClose.Width = 150;
+            this.nbTicketsClose.Width = 147;
             // 
             // btnAddUser
             // 
             this.btnAddUser.Location = new System.Drawing.Point(12, 12);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(175, 52);
-            this.btnAddUser.TabIndex = 1;
+            this.btnAddUser.TabIndex = 0;
             this.btnAddUser.Text = "Ajouter un utilisateur";
             this.btnAddUser.UseVisualStyleBackColor = true;
             this.btnAddUser.Click += new System.EventHandler(this.button1_Click);
@@ -134,9 +137,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1408, 589);
+            this.ClientSize = new System.Drawing.Size(864, 589);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.dgvUsers);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmManageUsers";
             this.Text = "Gestion des utilisateurs";
             this.Load += new System.EventHandler(this.frmManageUsers_Load);

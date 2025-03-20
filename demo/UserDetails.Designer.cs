@@ -58,21 +58,21 @@
             this.txtFirstname.Location = new System.Drawing.Point(186, 43);
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.Size = new System.Drawing.Size(227, 26);
-            this.txtFirstname.TabIndex = 0;
+            this.txtFirstname.TabIndex = 2;
             // 
             // txtLastname
             // 
             this.txtLastname.Location = new System.Drawing.Point(186, 104);
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(227, 26);
-            this.txtLastname.TabIndex = 1;
+            this.txtLastname.TabIndex = 4;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(186, 169);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(227, 26);
-            this.txtEmail.TabIndex = 2;
+            this.txtEmail.TabIndex = 6;
             // 
             // grpUsersDetails
             // 
@@ -90,7 +90,7 @@
             this.grpUsersDetails.Location = new System.Drawing.Point(12, 12);
             this.grpUsersDetails.Name = "grpUsersDetails";
             this.grpUsersDetails.Size = new System.Drawing.Size(436, 386);
-            this.grpUsersDetails.TabIndex = 4;
+            this.grpUsersDetails.TabIndex = 0;
             this.grpUsersDetails.TabStop = false;
             this.grpUsersDetails.Text = "Informations";
             // 
@@ -99,7 +99,7 @@
             this.btnCreate.Location = new System.Drawing.Point(133, 306);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(178, 52);
-            this.btnCreate.TabIndex = 11;
+            this.btnCreate.TabIndex = 10;
             this.btnCreate.Text = "Créer";
             this.btnCreate.UseVisualStyleBackColor = true;
             // 
@@ -108,7 +108,7 @@
             this.btnDelete.Location = new System.Drawing.Point(235, 306);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(178, 52);
-            this.btnDelete.TabIndex = 10;
+            this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "Supprimer";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -123,14 +123,14 @@
             this.cboRole.Location = new System.Drawing.Point(186, 228);
             this.cboRole.Name = "cboRole";
             this.cboRole.Size = new System.Drawing.Size(227, 28);
-            this.cboRole.TabIndex = 9;
+            this.cboRole.TabIndex = 8;
             // 
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(24, 306);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(178, 52);
-            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Mettre à jour";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -138,7 +138,7 @@
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(54, 231);
+            this.lblRole.Location = new System.Drawing.Point(54, 232);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(42, 20);
             this.lblRole.TabIndex = 7;
@@ -150,7 +150,7 @@
             this.lblEmail.Location = new System.Drawing.Point(54, 172);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(48, 20);
-            this.lblEmail.TabIndex = 6;
+            this.lblEmail.TabIndex = 5;
             this.lblEmail.Text = "Email";
             // 
             // lblLastname
@@ -159,7 +159,7 @@
             this.lblLastname.Location = new System.Drawing.Point(54, 107);
             this.lblLastname.Name = "lblLastname";
             this.lblLastname.Size = new System.Drawing.Size(42, 20);
-            this.lblLastname.TabIndex = 5;
+            this.lblLastname.TabIndex = 3;
             this.lblLastname.Text = "Nom";
             // 
             // lblFirstname
@@ -168,13 +168,14 @@
             this.lblFirstname.Location = new System.Drawing.Point(54, 46);
             this.lblFirstname.Name = "lblFirstname";
             this.lblFirstname.Size = new System.Drawing.Size(64, 20);
-            this.lblFirstname.TabIndex = 4;
+            this.lblFirstname.TabIndex = 1;
             this.lblFirstname.Text = "Prénom";
             // 
             // dgvUserTickets
             // 
             this.dgvUserTickets.AllowUserToAddRows = false;
             this.dgvUserTickets.AllowUserToDeleteRows = false;
+            this.dgvUserTickets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvUserTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUserTickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -188,7 +189,7 @@
             this.dgvUserTickets.RowHeadersWidth = 62;
             this.dgvUserTickets.RowTemplate.Height = 28;
             this.dgvUserTickets.Size = new System.Drawing.Size(815, 349);
-            this.dgvUserTickets.TabIndex = 5;
+            this.dgvUserTickets.TabIndex = 13;
             // 
             // id
             // 
@@ -196,7 +197,7 @@
             this.id.MinimumWidth = 8;
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.Width = 150;
+            this.id.Width = 59;
             // 
             // Sujet
             // 
@@ -204,7 +205,7 @@
             this.Sujet.MinimumWidth = 8;
             this.Sujet.Name = "Sujet";
             this.Sujet.ReadOnly = true;
-            this.Sujet.Width = 150;
+            this.Sujet.Width = 96;
             // 
             // priority
             // 
@@ -212,7 +213,7 @@
             this.priority.MinimumWidth = 8;
             this.priority.Name = "priority";
             this.priority.ReadOnly = true;
-            this.priority.Width = 150;
+            this.priority.Width = 94;
             // 
             // status
             // 
@@ -220,7 +221,7 @@
             this.status.MinimumWidth = 8;
             this.status.Name = "status";
             this.status.ReadOnly = true;
-            this.status.Width = 150;
+            this.status.Width = 89;
             // 
             // nbMessages
             // 
@@ -228,7 +229,7 @@
             this.nbMessages.MinimumWidth = 8;
             this.nbMessages.Name = "nbMessages";
             this.nbMessages.ReadOnly = true;
-            this.nbMessages.Width = 150;
+            this.nbMessages.Width = 146;
             // 
             // grpUserTickets
             // 
@@ -236,7 +237,7 @@
             this.grpUserTickets.Location = new System.Drawing.Point(464, 21);
             this.grpUserTickets.Name = "grpUserTickets";
             this.grpUserTickets.Size = new System.Drawing.Size(852, 377);
-            this.grpUserTickets.TabIndex = 6;
+            this.grpUserTickets.TabIndex = 12;
             this.grpUserTickets.TabStop = false;
             this.grpUserTickets.Text = "Tickets";
             // 
@@ -249,6 +250,7 @@
             this.ClientSize = new System.Drawing.Size(1334, 413);
             this.Controls.Add(this.grpUserTickets);
             this.Controls.Add(this.grpUsersDetails);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmUserDetails";
             this.Text = "Détails de l\'utilisateur";
             this.Load += new System.EventHandler(this.frmUserDetails_Load);

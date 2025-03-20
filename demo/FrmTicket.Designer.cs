@@ -89,7 +89,7 @@
             this.btnDelete.Location = new System.Drawing.Point(638, 35);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(184, 31);
-            this.btnDelete.TabIndex = 13;
+            this.btnDelete.TabIndex = 28;
             this.btnDelete.Text = "Supprimer le ticket";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -104,7 +104,7 @@
             this.cboStatus.Location = new System.Drawing.Point(87, 128);
             this.cboStatus.Name = "cboStatus";
             this.cboStatus.Size = new System.Drawing.Size(127, 28);
-            this.cboStatus.TabIndex = 12;
+            this.cboStatus.TabIndex = 7;
             this.cboStatus.SelectedIndexChanged += new System.EventHandler(this.cboStatus_SelectedIndexChanged);
             // 
             // btnUpdateSubject
@@ -112,7 +112,7 @@
             this.btnUpdateSubject.Location = new System.Drawing.Point(402, 35);
             this.btnUpdateSubject.Name = "btnUpdateSubject";
             this.btnUpdateSubject.Size = new System.Drawing.Size(165, 31);
-            this.btnUpdateSubject.TabIndex = 9;
+            this.btnUpdateSubject.TabIndex = 3;
             this.btnUpdateSubject.Text = "Mettre à jour le sujet";
             this.btnUpdateSubject.UseVisualStyleBackColor = true;
             this.btnUpdateSubject.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -127,7 +127,7 @@
             this.cboPriority.Location = new System.Drawing.Point(87, 84);
             this.cboPriority.Name = "cboPriority";
             this.cboPriority.Size = new System.Drawing.Size(139, 28);
-            this.cboPriority.TabIndex = 11;
+            this.cboPriority.TabIndex = 5;
             this.cboPriority.SelectedIndexChanged += new System.EventHandler(this.cboPriority_SelectedIndexChanged);
             // 
             // txtSubject
@@ -135,7 +135,7 @@
             this.txtSubject.Location = new System.Drawing.Point(87, 37);
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(309, 26);
-            this.txtSubject.TabIndex = 8;
+            this.txtSubject.TabIndex = 2;
             // 
             // lblStatus
             // 
@@ -143,7 +143,7 @@
             this.lblStatus.Location = new System.Drawing.Point(24, 132);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(53, 20);
-            this.lblStatus.TabIndex = 10;
+            this.lblStatus.TabIndex = 6;
             this.lblStatus.Text = "Statut";
             // 
             // lblPriority
@@ -152,7 +152,7 @@
             this.lblPriority.Location = new System.Drawing.Point(24, 88);
             this.lblPriority.Name = "lblPriority";
             this.lblPriority.Size = new System.Drawing.Size(58, 20);
-            this.lblPriority.TabIndex = 9;
+            this.lblPriority.TabIndex = 4;
             this.lblPriority.Text = "Priorité";
             // 
             // lblSubject
@@ -161,7 +161,7 @@
             this.lblSubject.Location = new System.Drawing.Point(24, 40);
             this.lblSubject.Name = "lblSubject";
             this.lblSubject.Size = new System.Drawing.Size(46, 20);
-            this.lblSubject.TabIndex = 8;
+            this.lblSubject.TabIndex = 1;
             this.lblSubject.Text = "Sujet";
             this.lblSubject.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -174,7 +174,7 @@
             this.grpUser.Location = new System.Drawing.Point(438, 169);
             this.grpUser.Name = "grpUser";
             this.grpUser.Size = new System.Drawing.Size(381, 162);
-            this.grpUser.TabIndex = 1;
+            this.grpUser.TabIndex = 18;
             this.grpUser.TabStop = false;
             this.grpUser.Text = "Utilisateur";
             // 
@@ -184,7 +184,7 @@
             this.txtLastnameUser.Name = "txtLastnameUser";
             this.txtLastnameUser.ReadOnly = true;
             this.txtLastnameUser.Size = new System.Drawing.Size(237, 26);
-            this.txtLastnameUser.TabIndex = 5;
+            this.txtLastnameUser.TabIndex = 22;
             this.txtLastnameUser.Text = "Blade";
             // 
             // txtFirstnameUser
@@ -193,7 +193,7 @@
             this.txtFirstnameUser.Name = "txtFirstnameUser";
             this.txtFirstnameUser.ReadOnly = true;
             this.txtFirstnameUser.Size = new System.Drawing.Size(237, 26);
-            this.txtFirstnameUser.TabIndex = 4;
+            this.txtFirstnameUser.TabIndex = 20;
             this.txtFirstnameUser.Text = "Paul";
             // 
             // lblLastnameUser
@@ -202,7 +202,7 @@
             this.lblLastnameUser.Location = new System.Drawing.Point(25, 81);
             this.lblLastnameUser.Name = "lblLastnameUser";
             this.lblLastnameUser.Size = new System.Drawing.Size(42, 20);
-            this.lblLastnameUser.TabIndex = 2;
+            this.lblLastnameUser.TabIndex = 21;
             this.lblLastnameUser.Text = "Nom";
             // 
             // lblFirstnameUser
@@ -211,7 +211,7 @@
             this.lblFirstnameUser.Location = new System.Drawing.Point(25, 42);
             this.lblFirstnameUser.Name = "lblFirstnameUser";
             this.lblFirstnameUser.Size = new System.Drawing.Size(64, 20);
-            this.lblFirstnameUser.TabIndex = 2;
+            this.lblFirstnameUser.TabIndex = 19;
             this.lblFirstnameUser.Text = "Prénom";
             // 
             // grpSupportInfo
@@ -225,7 +225,7 @@
             this.grpSupportInfo.Location = new System.Drawing.Point(18, 169);
             this.grpSupportInfo.Name = "grpSupportInfo";
             this.grpSupportInfo.Size = new System.Drawing.Size(378, 162);
-            this.grpSupportInfo.TabIndex = 0;
+            this.grpSupportInfo.TabIndex = 10;
             this.grpSupportInfo.TabStop = false;
             this.grpSupportInfo.Text = "Support";
             // 
@@ -235,7 +235,7 @@
             this.lblChangeSupportAgent.Location = new System.Drawing.Point(15, 42);
             this.lblChangeSupportAgent.Name = "lblChangeSupportAgent";
             this.lblChangeSupportAgent.Size = new System.Drawing.Size(65, 20);
-            this.lblChangeSupportAgent.TabIndex = 15;
+            this.lblChangeSupportAgent.TabIndex = 11;
             this.lblChangeSupportAgent.Text = "Attribué";
             // 
             // cboSupportAgent
@@ -248,7 +248,7 @@
             this.cboSupportAgent.Location = new System.Drawing.Point(110, 38);
             this.cboSupportAgent.Name = "cboSupportAgent";
             this.cboSupportAgent.Size = new System.Drawing.Size(237, 28);
-            this.cboSupportAgent.TabIndex = 14;
+            this.cboSupportAgent.TabIndex = 12;
             // 
             // txtLastnameSupport
             // 
@@ -256,7 +256,7 @@
             this.txtLastnameSupport.Name = "txtLastnameSupport";
             this.txtLastnameSupport.ReadOnly = true;
             this.txtLastnameSupport.Size = new System.Drawing.Size(237, 26);
-            this.txtLastnameSupport.TabIndex = 7;
+            this.txtLastnameSupport.TabIndex = 16;
             this.txtLastnameSupport.Text = "Evans";
             // 
             // lblLastnameSupport
@@ -265,7 +265,7 @@
             this.lblLastnameSupport.Location = new System.Drawing.Point(15, 120);
             this.lblLastnameSupport.Name = "lblLastnameSupport";
             this.lblLastnameSupport.Size = new System.Drawing.Size(42, 20);
-            this.lblLastnameSupport.TabIndex = 1;
+            this.lblLastnameSupport.TabIndex = 15;
             this.lblLastnameSupport.Text = "Nom";
             // 
             // txtFirstnameSupport
@@ -274,7 +274,7 @@
             this.txtFirstnameSupport.Name = "txtFirstnameSupport";
             this.txtFirstnameSupport.ReadOnly = true;
             this.txtFirstnameSupport.Size = new System.Drawing.Size(237, 26);
-            this.txtFirstnameSupport.TabIndex = 6;
+            this.txtFirstnameSupport.TabIndex = 14;
             this.txtFirstnameSupport.Text = "Mark";
             // 
             // lblSupportFirstname
@@ -283,7 +283,7 @@
             this.lblSupportFirstname.Location = new System.Drawing.Point(15, 81);
             this.lblSupportFirstname.Name = "lblSupportFirstname";
             this.lblSupportFirstname.Size = new System.Drawing.Size(64, 20);
-            this.lblSupportFirstname.TabIndex = 0;
+            this.lblSupportFirstname.TabIndex = 13;
             this.lblSupportFirstname.Text = "Prénom";
             // 
             // grpMessages
@@ -295,7 +295,7 @@
             this.grpMessages.Location = new System.Drawing.Point(12, 427);
             this.grpMessages.Name = "grpMessages";
             this.grpMessages.Size = new System.Drawing.Size(834, 362);
-            this.grpMessages.TabIndex = 1;
+            this.grpMessages.TabIndex = 23;
             this.grpMessages.TabStop = false;
             this.grpMessages.Text = "Messages";
             this.grpMessages.Enter += new System.EventHandler(this.grpMessages_Enter);
@@ -306,7 +306,7 @@
             this.lblEvaluation.Location = new System.Drawing.Point(447, 88);
             this.lblEvaluation.Name = "lblEvaluation";
             this.lblEvaluation.Size = new System.Drawing.Size(83, 20);
-            this.lblEvaluation.TabIndex = 14;
+            this.lblEvaluation.TabIndex = 8;
             this.lblEvaluation.Text = "Evaluation";
             // 
             // cboEvaluation
@@ -322,7 +322,7 @@
             this.cboEvaluation.Location = new System.Drawing.Point(536, 84);
             this.cboEvaluation.Name = "cboEvaluation";
             this.cboEvaluation.Size = new System.Drawing.Size(139, 28);
-            this.cboEvaluation.TabIndex = 15;
+            this.cboEvaluation.TabIndex = 9;
             // 
             // lstMessages
             // 
@@ -331,7 +331,7 @@
             this.lstMessages.Location = new System.Drawing.Point(18, 39);
             this.lstMessages.Name = "lstMessages";
             this.lstMessages.Size = new System.Drawing.Size(801, 224);
-            this.lstMessages.TabIndex = 0;
+            this.lstMessages.TabIndex = 24;
             // 
             // lblMessage
             // 
@@ -339,7 +339,7 @@
             this.lblMessage.Location = new System.Drawing.Point(18, 304);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(74, 20);
-            this.lblMessage.TabIndex = 1;
+            this.lblMessage.TabIndex = 25;
             this.lblMessage.Text = "Message";
             // 
             // txtMessage
@@ -347,7 +347,7 @@
             this.txtMessage.Location = new System.Drawing.Point(98, 301);
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(577, 26);
-            this.txtMessage.TabIndex = 16;
+            this.txtMessage.TabIndex = 26;
             this.txtMessage.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnEnvoyer
@@ -355,7 +355,7 @@
             this.btnEnvoyer.Location = new System.Drawing.Point(677, 299);
             this.btnEnvoyer.Name = "btnEnvoyer";
             this.btnEnvoyer.Size = new System.Drawing.Size(145, 31);
-            this.btnEnvoyer.TabIndex = 16;
+            this.btnEnvoyer.TabIndex = 27;
             this.btnEnvoyer.Text = "Envoyer";
             this.btnEnvoyer.UseVisualStyleBackColor = true;
             this.btnEnvoyer.Click += new System.EventHandler(this.btnEnvoyer_Click);
@@ -368,6 +368,7 @@
             this.ClientSize = new System.Drawing.Size(885, 809);
             this.Controls.Add(this.grpMessages);
             this.Controls.Add(this.grpTicketInfo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmTicket";
             this.Text = "Ticket";
             this.Load += new System.EventHandler(this.FrmTicket_Load);
