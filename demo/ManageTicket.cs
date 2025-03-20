@@ -17,7 +17,7 @@ namespace demo
             InitializeComponent();
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 
-            string[] row = { "1", "John Doe", "Problème de connexion", "Moyenne", "5", "Ouvert" };
+            string[] row = { "1", "John Doe", "Problème de connexion", "Moyenne", "5", "Fermé", "3"};
 
             dgvTickets.Rows.Add(row);
 

@@ -30,11 +30,12 @@
         {
             this.dgvTickets = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Utilisateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nbMessages = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evaluation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,20 +43,24 @@
             // 
             this.dgvTickets.AllowUserToAddRows = false;
             this.dgvTickets.AllowUserToDeleteRows = false;
+            this.dgvTickets.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.Utilisateur,
+            this.user,
             this.subject,
             this.priority,
             this.nbMessages,
-            this.status});
+            this.status,
+            this.evaluation});
             this.dgvTickets.Location = new System.Drawing.Point(12, 12);
             this.dgvTickets.Name = "dgvTickets";
             this.dgvTickets.ReadOnly = true;
             this.dgvTickets.RowHeadersWidth = 62;
             this.dgvTickets.RowTemplate.Height = 28;
-            this.dgvTickets.Size = new System.Drawing.Size(1331, 506);
+            this.dgvTickets.Size = new System.Drawing.Size(1659, 656);
             this.dgvTickets.TabIndex = 1;
             this.dgvTickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTickets_CellContentClick);
             // 
@@ -67,13 +72,13 @@
             this.id.ReadOnly = true;
             this.id.Width = 150;
             // 
-            // Utilisateur
+            // user
             // 
-            this.Utilisateur.HeaderText = "user";
-            this.Utilisateur.MinimumWidth = 8;
-            this.Utilisateur.Name = "Utilisateur";
-            this.Utilisateur.ReadOnly = true;
-            this.Utilisateur.Width = 150;
+            this.user.HeaderText = "Utilisateur";
+            this.user.MinimumWidth = 8;
+            this.user.Name = "user";
+            this.user.ReadOnly = true;
+            this.user.Width = 150;
             // 
             // subject
             // 
@@ -107,12 +112,20 @@
             this.status.ReadOnly = true;
             this.status.Width = 150;
             // 
+            // evaluation
+            // 
+            this.evaluation.HeaderText = "Evaluation";
+            this.evaluation.MinimumWidth = 8;
+            this.evaluation.Name = "evaluation";
+            this.evaluation.ReadOnly = true;
+            this.evaluation.Width = 150;
+            // 
             // frmManageTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1365, 532);
+            this.ClientSize = new System.Drawing.Size(1693, 682);
             this.Controls.Add(this.dgvTickets);
             this.Name = "frmManageTicket";
             this.Text = "Gestion des tickets";
@@ -126,10 +139,11 @@
 
         private System.Windows.Forms.DataGridView dgvTickets;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Utilisateur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user;
         private System.Windows.Forms.DataGridViewTextBoxColumn subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn priority;
         private System.Windows.Forms.DataGridViewTextBoxColumn nbMessages;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn evaluation;
     }
 }
