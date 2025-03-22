@@ -46,10 +46,20 @@ namespace demo
             {
                 this.btnEnvoyer.Enabled = false;
                 this.txtMessage.Enabled = false;
+                this.btnUpdateSubject.Enabled = false;
+                this.txtSubject.Enabled = false;
+                this.cboPriority.Enabled = false;
+                this.cboSupportAgent.Enabled = false;
+                this.cboEvaluation.Enabled = false;
             } else
             {
                 this.btnEnvoyer.Enabled = true;
                 this.txtMessage.Enabled = true;
+                this.btnUpdateSubject.Enabled = true;
+                this.txtSubject.Enabled = true;
+                this.cboPriority.Enabled = true;
+                this.cboSupportAgent.Enabled = true;
+                this.cboEvaluation.Enabled = true;
             }
         }
 

@@ -88,7 +88,7 @@
             this.grpUsersDetails.Controls.Add(this.txtFirstname);
             this.grpUsersDetails.Controls.Add(this.txtLastname);
             this.grpUsersDetails.Controls.Add(this.txtEmail);
-            this.grpUsersDetails.Location = new System.Drawing.Point(12, 12);
+            this.grpUsersDetails.Location = new System.Drawing.Point(12, 21);
             this.grpUsersDetails.Name = "grpUsersDetails";
             this.grpUsersDetails.Size = new System.Drawing.Size(436, 386);
             this.grpUsersDetails.TabIndex = 0;
@@ -103,6 +103,7 @@
             this.btnCreate.TabIndex = 10;
             this.btnCreate.Text = "&Créer";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click_1);
             // 
             // btnDelete
             // 
@@ -199,7 +200,7 @@
             this.grpUserTickets.Controls.Add(this.dgvUserTickets);
             this.grpUserTickets.Location = new System.Drawing.Point(464, 21);
             this.grpUserTickets.Name = "grpUserTickets";
-            this.grpUserTickets.Size = new System.Drawing.Size(852, 377);
+            this.grpUserTickets.Size = new System.Drawing.Size(852, 386);
             this.grpUserTickets.TabIndex = 12;
             this.grpUserTickets.TabStop = false;
             this.grpUserTickets.Text = "Tickets";

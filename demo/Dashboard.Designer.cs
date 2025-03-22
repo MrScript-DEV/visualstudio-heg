@@ -31,21 +31,20 @@
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiManageTickets = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiManageUsers = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiManageRoles = new System.Windows.Forms.ToolStripMenuItem();
             this.grpUsers = new System.Windows.Forms.GroupBox();
-            this.lblAdmin = new System.Windows.Forms.Label();
-            this.lblUsers = new System.Windows.Forms.Label();
-            this.lblNbAdmin = new System.Windows.Forms.Label();
-            this.lblNbUsers = new System.Windows.Forms.Label();
-            this.lblSupport = new System.Windows.Forms.Label();
             this.lblNbSupport = new System.Windows.Forms.Label();
+            this.lblSupport = new System.Windows.Forms.Label();
+            this.lblNbUsers = new System.Windows.Forms.Label();
+            this.lblNbAdmin = new System.Windows.Forms.Label();
+            this.lblUsers = new System.Windows.Forms.Label();
+            this.lblAdmin = new System.Windows.Forms.Label();
             this.grpStats = new System.Windows.Forms.GroupBox();
-            this.lblOpenTickets = new System.Windows.Forms.Label();
-            this.lblClosedTickets = new System.Windows.Forms.Label();
-            this.lblNbOpenTickets = new System.Windows.Forms.Label();
-            this.lblNbCloseTickets = new System.Windows.Forms.Label();
-            this.lblPendingTickets = new System.Windows.Forms.Label();
             this.lblNbPendingTickets = new System.Windows.Forms.Label();
+            this.lblPendingTickets = new System.Windows.Forms.Label();
+            this.lblNbCloseTickets = new System.Windows.Forms.Label();
+            this.lblNbOpenTickets = new System.Windows.Forms.Label();
+            this.lblClosedTickets = new System.Windows.Forms.Label();
+            this.lblOpenTickets = new System.Windows.Forms.Label();
             this.msMenu.SuspendLayout();
             this.grpUsers.SuspendLayout();
             this.grpStats.SuspendLayout();
@@ -57,8 +56,7 @@
             this.msMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiManageTickets,
-            this.tsmiManageUsers,
-            this.tsmiManageRoles});
+            this.tsmiManageUsers});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.Size = new System.Drawing.Size(780, 33);
@@ -80,12 +78,6 @@
             this.tsmiManageUsers.Text = "Gestion des &utilisateurs";
             this.tsmiManageUsers.Click += new System.EventHandler(this.gestionDesUtilisateursToolStripMenuItem_Click);
             // 
-            // tsmiManageRoles
-            // 
-            this.tsmiManageRoles.Name = "tsmiManageRoles";
-            this.tsmiManageRoles.Size = new System.Drawing.Size(164, 29);
-            this.tsmiManageRoles.Text = "Gestion des &roles";
-            // 
             // grpUsers
             // 
             this.grpUsers.Controls.Add(this.lblNbSupport);
@@ -101,45 +93,15 @@
             this.grpUsers.TabStop = false;
             this.grpUsers.Text = "Utilisateurs";
             // 
-            // lblAdmin
+            // lblNbSupport
             // 
-            this.lblAdmin.AutoSize = true;
-            this.lblAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblAdmin.Location = new System.Drawing.Point(25, 66);
-            this.lblAdmin.Name = "lblAdmin";
-            this.lblAdmin.Size = new System.Drawing.Size(137, 29);
-            this.lblAdmin.TabIndex = 8;
-            this.lblAdmin.Text = "Nb. Admin :";
-            // 
-            // lblUsers
-            // 
-            this.lblUsers.AutoSize = true;
-            this.lblUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblUsers.Location = new System.Drawing.Point(25, 169);
-            this.lblUsers.Name = "lblUsers";
-            this.lblUsers.Size = new System.Drawing.Size(188, 29);
-            this.lblUsers.TabIndex = 12;
-            this.lblUsers.Text = "Nb. Utilisateurs :";
-            // 
-            // lblNbAdmin
-            // 
-            this.lblNbAdmin.AutoSize = true;
-            this.lblNbAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNbAdmin.Location = new System.Drawing.Point(261, 66);
-            this.lblNbAdmin.Name = "lblNbAdmin";
-            this.lblNbAdmin.Size = new System.Drawing.Size(26, 29);
-            this.lblNbAdmin.TabIndex = 9;
-            this.lblNbAdmin.Text = "2";
-            // 
-            // lblNbUsers
-            // 
-            this.lblNbUsers.AutoSize = true;
-            this.lblNbUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNbUsers.Location = new System.Drawing.Point(248, 169);
-            this.lblNbUsers.Name = "lblNbUsers";
-            this.lblNbUsers.Size = new System.Drawing.Size(52, 29);
-            this.lblNbUsers.TabIndex = 13;
-            this.lblNbUsers.Text = "340";
+            this.lblNbSupport.AutoSize = true;
+            this.lblNbSupport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblNbSupport.Location = new System.Drawing.Point(255, 121);
+            this.lblNbSupport.Name = "lblNbSupport";
+            this.lblNbSupport.Size = new System.Drawing.Size(39, 29);
+            this.lblNbSupport.TabIndex = 11;
+            this.lblNbSupport.Text = "10";
             // 
             // lblSupport
             // 
@@ -151,15 +113,45 @@
             this.lblSupport.TabIndex = 10;
             this.lblSupport.Text = "Nb. Support :";
             // 
-            // lblNbSupport
+            // lblNbUsers
             // 
-            this.lblNbSupport.AutoSize = true;
-            this.lblNbSupport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNbSupport.Location = new System.Drawing.Point(255, 121);
-            this.lblNbSupport.Name = "lblNbSupport";
-            this.lblNbSupport.Size = new System.Drawing.Size(39, 29);
-            this.lblNbSupport.TabIndex = 11;
-            this.lblNbSupport.Text = "10";
+            this.lblNbUsers.AutoSize = true;
+            this.lblNbUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblNbUsers.Location = new System.Drawing.Point(248, 169);
+            this.lblNbUsers.Name = "lblNbUsers";
+            this.lblNbUsers.Size = new System.Drawing.Size(52, 29);
+            this.lblNbUsers.TabIndex = 13;
+            this.lblNbUsers.Text = "340";
+            // 
+            // lblNbAdmin
+            // 
+            this.lblNbAdmin.AutoSize = true;
+            this.lblNbAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblNbAdmin.Location = new System.Drawing.Point(261, 66);
+            this.lblNbAdmin.Name = "lblNbAdmin";
+            this.lblNbAdmin.Size = new System.Drawing.Size(26, 29);
+            this.lblNbAdmin.TabIndex = 9;
+            this.lblNbAdmin.Text = "2";
+            // 
+            // lblUsers
+            // 
+            this.lblUsers.AutoSize = true;
+            this.lblUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblUsers.Location = new System.Drawing.Point(25, 169);
+            this.lblUsers.Name = "lblUsers";
+            this.lblUsers.Size = new System.Drawing.Size(188, 29);
+            this.lblUsers.TabIndex = 12;
+            this.lblUsers.Text = "Nb. Utilisateurs :";
+            // 
+            // lblAdmin
+            // 
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblAdmin.Location = new System.Drawing.Point(25, 66);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(137, 29);
+            this.lblAdmin.TabIndex = 8;
+            this.lblAdmin.Text = "Nb. Admin :";
             // 
             // grpStats
             // 
@@ -177,46 +169,15 @@
             this.grpStats.Text = "Statistiques";
             this.grpStats.Enter += new System.EventHandler(this.grpStats_Enter);
             // 
-            // lblOpenTickets
+            // lblNbPendingTickets
             // 
-            this.lblOpenTickets.AutoSize = true;
-            this.lblOpenTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblOpenTickets.Location = new System.Drawing.Point(25, 66);
-            this.lblOpenTickets.Name = "lblOpenTickets";
-            this.lblOpenTickets.Size = new System.Drawing.Size(187, 29);
-            this.lblOpenTickets.TabIndex = 1;
-            this.lblOpenTickets.Text = "Tickets ouverts :";
-            this.lblOpenTickets.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lblClosedTickets
-            // 
-            this.lblClosedTickets.AutoSize = true;
-            this.lblClosedTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblClosedTickets.Location = new System.Drawing.Point(25, 169);
-            this.lblClosedTickets.Name = "lblClosedTickets";
-            this.lblClosedTickets.Size = new System.Drawing.Size(183, 29);
-            this.lblClosedTickets.TabIndex = 5;
-            this.lblClosedTickets.Text = "Tickets fermés :";
-            // 
-            // lblNbOpenTickets
-            // 
-            this.lblNbOpenTickets.AutoSize = true;
-            this.lblNbOpenTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNbOpenTickets.Location = new System.Drawing.Point(261, 66);
-            this.lblNbOpenTickets.Name = "lblNbOpenTickets";
-            this.lblNbOpenTickets.Size = new System.Drawing.Size(39, 29);
-            this.lblNbOpenTickets.TabIndex = 2;
-            this.lblNbOpenTickets.Text = "24";
-            // 
-            // lblNbCloseTickets
-            // 
-            this.lblNbCloseTickets.AutoSize = true;
-            this.lblNbCloseTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNbCloseTickets.Location = new System.Drawing.Point(254, 169);
-            this.lblNbCloseTickets.Name = "lblNbCloseTickets";
-            this.lblNbCloseTickets.Size = new System.Drawing.Size(52, 29);
-            this.lblNbCloseTickets.TabIndex = 6;
-            this.lblNbCloseTickets.Text = "240";
+            this.lblNbPendingTickets.AutoSize = true;
+            this.lblNbPendingTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblNbPendingTickets.Location = new System.Drawing.Point(261, 121);
+            this.lblNbPendingTickets.Name = "lblNbPendingTickets";
+            this.lblNbPendingTickets.Size = new System.Drawing.Size(39, 29);
+            this.lblNbPendingTickets.TabIndex = 4;
+            this.lblNbPendingTickets.Text = "24";
             // 
             // lblPendingTickets
             // 
@@ -228,15 +189,46 @@
             this.lblPendingTickets.TabIndex = 3;
             this.lblPendingTickets.Text = "Tickets en attente :";
             // 
-            // lblNbPendingTickets
+            // lblNbCloseTickets
             // 
-            this.lblNbPendingTickets.AutoSize = true;
-            this.lblNbPendingTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNbPendingTickets.Location = new System.Drawing.Point(261, 121);
-            this.lblNbPendingTickets.Name = "lblNbPendingTickets";
-            this.lblNbPendingTickets.Size = new System.Drawing.Size(39, 29);
-            this.lblNbPendingTickets.TabIndex = 4;
-            this.lblNbPendingTickets.Text = "24";
+            this.lblNbCloseTickets.AutoSize = true;
+            this.lblNbCloseTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblNbCloseTickets.Location = new System.Drawing.Point(254, 169);
+            this.lblNbCloseTickets.Name = "lblNbCloseTickets";
+            this.lblNbCloseTickets.Size = new System.Drawing.Size(52, 29);
+            this.lblNbCloseTickets.TabIndex = 6;
+            this.lblNbCloseTickets.Text = "240";
+            // 
+            // lblNbOpenTickets
+            // 
+            this.lblNbOpenTickets.AutoSize = true;
+            this.lblNbOpenTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblNbOpenTickets.Location = new System.Drawing.Point(261, 66);
+            this.lblNbOpenTickets.Name = "lblNbOpenTickets";
+            this.lblNbOpenTickets.Size = new System.Drawing.Size(39, 29);
+            this.lblNbOpenTickets.TabIndex = 2;
+            this.lblNbOpenTickets.Text = "24";
+            // 
+            // lblClosedTickets
+            // 
+            this.lblClosedTickets.AutoSize = true;
+            this.lblClosedTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblClosedTickets.Location = new System.Drawing.Point(25, 169);
+            this.lblClosedTickets.Name = "lblClosedTickets";
+            this.lblClosedTickets.Size = new System.Drawing.Size(183, 29);
+            this.lblClosedTickets.TabIndex = 5;
+            this.lblClosedTickets.Text = "Tickets fermés :";
+            // 
+            // lblOpenTickets
+            // 
+            this.lblOpenTickets.AutoSize = true;
+            this.lblOpenTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblOpenTickets.Location = new System.Drawing.Point(25, 66);
+            this.lblOpenTickets.Name = "lblOpenTickets";
+            this.lblOpenTickets.Size = new System.Drawing.Size(187, 29);
+            this.lblOpenTickets.TabIndex = 1;
+            this.lblOpenTickets.Text = "Tickets ouverts :";
+            this.lblOpenTickets.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmDashboard
             // 
@@ -268,7 +260,6 @@
         private System.Windows.Forms.MenuStrip msMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiManageTickets;
         private System.Windows.Forms.ToolStripMenuItem tsmiManageUsers;
-        private System.Windows.Forms.ToolStripMenuItem tsmiManageRoles;
         private System.Windows.Forms.GroupBox grpUsers;
         private System.Windows.Forms.Label lblNbSupport;
         private System.Windows.Forms.Label lblSupport;

@@ -40,6 +40,18 @@ namespace demo
 
                 dgvUserTickets.Rows.Add(row);
             }
+
+            txtFirstname.TextChanged += new EventHandler(InputFieldsChanged);
+            txtLastname.TextChanged += new EventHandler(InputFieldsChanged);
+            txtEmail.TextChanged += new EventHandler(InputFieldsChanged);
+            cboRole.SelectedIndexChanged += new EventHandler(InputFieldsChanged);
+
+            checkDataIsValid();
+        }
+
+        private void InputFieldsChanged(object sender, EventArgs e)
+        {
+            checkDataIsValid();
         }
 
         private void frmUserDetails_Load(object sender, EventArgs e)
@@ -47,11 +59,18 @@ namespace demo
 
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        private void checkDataIsValid()
         {
-            MessageBox.Show("Utilisateur créé avec succès!", "Gestion utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            this.Close();
+            if (txtFirstname.Text == "" || txtLastname.Text == "" || txtEmail.Text == "" || cboRole.Text == "")
+            {
+                btnCreate.Enabled = false;
+                btnUpdate.Enabled = false;
+            }
+            else
+            {
+                btnCreate.Enabled = true;
+                btnUpdate.Enabled = true;
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -85,6 +104,13 @@ namespace demo
                 frmTicket ticket = new frmTicket(id);
                 ticket.ShowDialog();
             }
+        }
+
+        private void btnCreate_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Utilisateur créé avec succès!", "Gestion utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Close();
         }
     }
 }
