@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo", "demo\demo.csproj", "{7B7D5D95-3DD2-4A54-9160-0C8189899B7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scriptsupport", "demo\scriptsupport.csproj", "{7B7D5D95-3DD2-4A54-9160-0C8189899B7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
