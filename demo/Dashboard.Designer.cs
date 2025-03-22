@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiManageTickets = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiManageUsers = new System.Windows.Forms.ToolStripMenuItem();
@@ -240,6 +241,7 @@
             this.Controls.Add(this.grpUsers);
             this.Controls.Add(this.msMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMenu;
             this.Name = "frmDashboard";
             this.Text = "Tableau de bord";

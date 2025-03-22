@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTicket));
             this.grpTicketInfo = new System.Windows.Forms.GroupBox();
             this.cboEvaluation = new System.Windows.Forms.ComboBox();
             this.lblEvaluation = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.btnUpdateSubject = new System.Windows.Forms.Button();
             this.cboPriority = new System.Windows.Forms.ComboBox();
@@ -51,6 +51,7 @@
             this.lblLastnameSupport = new System.Windows.Forms.Label();
             this.txtFirstnameSupport = new System.Windows.Forms.TextBox();
             this.lblSupportFirstname = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.grpMessages = new System.Windows.Forms.GroupBox();
             this.btnEnvoyer = new System.Windows.Forms.Button();
             this.txtMessage = new System.Windows.Forms.TextBox();
@@ -106,16 +107,6 @@
             this.lblEvaluation.Size = new System.Drawing.Size(83, 20);
             this.lblEvaluation.TabIndex = 8;
             this.lblEvaluation.Text = "Evaluation";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(662, 12);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(184, 31);
-            this.btnDelete.TabIndex = 28;
-            this.btnDelete.Text = "&Supprimer le ticket";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // cboStatus
             // 
@@ -309,6 +300,16 @@
             this.lblSupportFirstname.TabIndex = 13;
             this.lblSupportFirstname.Text = "Prénom";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(662, 12);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(184, 31);
+            this.btnDelete.TabIndex = 28;
+            this.btnDelete.Text = "&Supprimer le ticket";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // grpMessages
             // 
             this.grpMessages.Controls.Add(this.btnEnvoyer);
@@ -369,6 +370,7 @@
             this.Controls.Add(this.grpTicketInfo);
             this.Controls.Add(this.btnDelete);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTicket";
             this.Text = "Ticket";
             this.Load += new System.EventHandler(this.FrmTicket_Load);
