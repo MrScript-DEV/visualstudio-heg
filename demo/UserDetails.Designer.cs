@@ -42,12 +42,13 @@
             this.lblFirstname = new System.Windows.Forms.Label();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.dgvUserTickets = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sujet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nbMessages = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpUserTickets = new System.Windows.Forms.GroupBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nbMessages = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evaluation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpUsersDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserTickets)).BeginInit();
             this.grpUserTickets.SuspendLayout();
@@ -100,7 +101,7 @@
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(178, 52);
             this.btnCreate.TabIndex = 10;
-            this.btnCreate.Text = "Créer";
+            this.btnCreate.Text = "&Créer";
             this.btnCreate.UseVisualStyleBackColor = true;
             // 
             // btnDelete
@@ -109,7 +110,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(178, 52);
             this.btnDelete.TabIndex = 11;
-            this.btnDelete.Text = "Supprimer";
+            this.btnDelete.Text = "&Supprimer";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -131,7 +132,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(178, 52);
             this.btnUpdate.TabIndex = 9;
-            this.btnUpdate.Text = "Mettre à jour";
+            this.btnUpdate.Text = "&Mettre à jour";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -179,10 +180,11 @@
             this.dgvUserTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUserTickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.Sujet,
+            this.subject,
             this.priority,
+            this.nbMessages,
             this.status,
-            this.nbMessages});
+            this.evaluation});
             this.dgvUserTickets.Location = new System.Drawing.Point(16, 22);
             this.dgvUserTickets.Name = "dgvUserTickets";
             this.dgvUserTickets.ReadOnly = true;
@@ -190,46 +192,7 @@
             this.dgvUserTickets.RowTemplate.Height = 28;
             this.dgvUserTickets.Size = new System.Drawing.Size(815, 349);
             this.dgvUserTickets.TabIndex = 13;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "Id";
-            this.id.MinimumWidth = 8;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 59;
-            // 
-            // Sujet
-            // 
-            this.Sujet.HeaderText = "subject";
-            this.Sujet.MinimumWidth = 8;
-            this.Sujet.Name = "Sujet";
-            this.Sujet.ReadOnly = true;
-            this.Sujet.Width = 96;
-            // 
-            // priority
-            // 
-            this.priority.HeaderText = "Priorité";
-            this.priority.MinimumWidth = 8;
-            this.priority.Name = "priority";
-            this.priority.ReadOnly = true;
-            this.priority.Width = 94;
-            // 
-            // status
-            // 
-            this.status.HeaderText = "Statut";
-            this.status.MinimumWidth = 8;
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Width = 89;
-            // 
-            // nbMessages
-            // 
-            this.nbMessages.HeaderText = "Nb. messages";
-            this.nbMessages.MinimumWidth = 8;
-            this.nbMessages.Name = "nbMessages";
-            this.nbMessages.ReadOnly = true;
-            this.nbMessages.Width = 146;
+            this.dgvUserTickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserTickets_CellContentClick);
             // 
             // grpUserTickets
             // 
@@ -240,6 +203,54 @@
             this.grpUserTickets.TabIndex = 12;
             this.grpUserTickets.TabStop = false;
             this.grpUserTickets.Text = "Tickets";
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 8;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 59;
+            // 
+            // subject
+            // 
+            this.subject.HeaderText = "Sujet";
+            this.subject.MinimumWidth = 8;
+            this.subject.Name = "subject";
+            this.subject.ReadOnly = true;
+            this.subject.Width = 82;
+            // 
+            // priority
+            // 
+            this.priority.HeaderText = "Priorité";
+            this.priority.MinimumWidth = 8;
+            this.priority.Name = "priority";
+            this.priority.ReadOnly = true;
+            this.priority.Width = 94;
+            // 
+            // nbMessages
+            // 
+            this.nbMessages.HeaderText = "Nb. messages";
+            this.nbMessages.MinimumWidth = 8;
+            this.nbMessages.Name = "nbMessages";
+            this.nbMessages.ReadOnly = true;
+            this.nbMessages.Width = 146;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Statut";
+            this.status.MinimumWidth = 8;
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Width = 89;
+            // 
+            // evaluation
+            // 
+            this.evaluation.HeaderText = "Evaluation";
+            this.evaluation.MinimumWidth = 8;
+            this.evaluation.Name = "evaluation";
+            this.evaluation.ReadOnly = true;
+            this.evaluation.Width = 119;
             // 
             // frmUserDetails
             // 
@@ -278,11 +289,12 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.DataGridView dgvUserTickets;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sujet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priority;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nbMessages;
         private System.Windows.Forms.GroupBox grpUserTickets;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priority;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nbMessages;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn evaluation;
     }
 }

@@ -32,6 +32,14 @@ namespace demo
             btnCreate.Visible = isNew;
             btnUpdate.Visible = !isNew;
             btnDelete.Visible = !isNew;
+
+            if (!isNew)
+            {
+
+                string[] row = { "1", "Problème de connexion", "Moyenne", "5", "Fermé", "3" };
+
+                dgvUserTickets.Rows.Add(row);
+            }
         }
 
         private void frmUserDetails_Load(object sender, EventArgs e)
@@ -65,6 +73,17 @@ namespace demo
             else
             {
                 MessageBox.Show("Suppression annulée.", "Gestion utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void dgvUserTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvUserTickets.Rows[e.RowIndex];
+                string id = row.Cells["id"].Value.ToString();
+                frmTicket ticket = new frmTicket(id);
+                ticket.ShowDialog();
             }
         }
     }

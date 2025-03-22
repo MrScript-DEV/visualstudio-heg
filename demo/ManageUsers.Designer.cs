@@ -128,7 +128,7 @@
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(175, 52);
             this.btnAddUser.TabIndex = 0;
-            this.btnAddUser.Text = "Ajouter un utilisateur";
+            this.btnAddUser.Text = "&Ajouter un utilisateur";
             this.btnAddUser.UseVisualStyleBackColor = true;
             this.btnAddUser.Click += new System.EventHandler(this.button1_Click);
             // 

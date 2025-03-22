@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.grpTicketInfo = new System.Windows.Forms.GroupBox();
+            this.cboEvaluation = new System.Windows.Forms.ComboBox();
+            this.lblEvaluation = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.btnUpdateSubject = new System.Windows.Forms.Button();
@@ -50,12 +52,10 @@
             this.txtFirstnameSupport = new System.Windows.Forms.TextBox();
             this.lblSupportFirstname = new System.Windows.Forms.Label();
             this.grpMessages = new System.Windows.Forms.GroupBox();
-            this.lblEvaluation = new System.Windows.Forms.Label();
-            this.cboEvaluation = new System.Windows.Forms.ComboBox();
-            this.lstMessages = new System.Windows.Forms.ListBox();
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.txtMessage = new System.Windows.Forms.TextBox();
             this.btnEnvoyer = new System.Windows.Forms.Button();
+            this.txtMessage = new System.Windows.Forms.TextBox();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.lstMessages = new System.Windows.Forms.ListBox();
             this.grpTicketInfo.SuspendLayout();
             this.grpUser.SuspendLayout();
             this.grpSupportInfo.SuspendLayout();
@@ -66,7 +66,6 @@
             // 
             this.grpTicketInfo.Controls.Add(this.cboEvaluation);
             this.grpTicketInfo.Controls.Add(this.lblEvaluation);
-            this.grpTicketInfo.Controls.Add(this.btnDelete);
             this.grpTicketInfo.Controls.Add(this.cboStatus);
             this.grpTicketInfo.Controls.Add(this.btnUpdateSubject);
             this.grpTicketInfo.Controls.Add(this.cboPriority);
@@ -76,21 +75,45 @@
             this.grpTicketInfo.Controls.Add(this.lblSubject);
             this.grpTicketInfo.Controls.Add(this.grpUser);
             this.grpTicketInfo.Controls.Add(this.grpSupportInfo);
-            this.grpTicketInfo.Location = new System.Drawing.Point(12, 12);
+            this.grpTicketInfo.Location = new System.Drawing.Point(12, 46);
             this.grpTicketInfo.Name = "grpTicketInfo";
-            this.grpTicketInfo.Size = new System.Drawing.Size(834, 363);
+            this.grpTicketInfo.Size = new System.Drawing.Size(834, 346);
             this.grpTicketInfo.TabIndex = 0;
             this.grpTicketInfo.TabStop = false;
             this.grpTicketInfo.Text = "Informations";
             this.grpTicketInfo.Enter += new System.EventHandler(this.grpTicketInfo_Enter);
             // 
+            // cboEvaluation
+            // 
+            this.cboEvaluation.FormattingEnabled = true;
+            this.cboEvaluation.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cboEvaluation.Location = new System.Drawing.Point(677, 80);
+            this.cboEvaluation.Name = "cboEvaluation";
+            this.cboEvaluation.Size = new System.Drawing.Size(139, 28);
+            this.cboEvaluation.TabIndex = 9;
+            // 
+            // lblEvaluation
+            // 
+            this.lblEvaluation.AutoSize = true;
+            this.lblEvaluation.Location = new System.Drawing.Point(588, 84);
+            this.lblEvaluation.Name = "lblEvaluation";
+            this.lblEvaluation.Size = new System.Drawing.Size(83, 20);
+            this.lblEvaluation.TabIndex = 8;
+            this.lblEvaluation.Text = "Evaluation";
+            // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(638, 35);
+            this.btnDelete.Location = new System.Drawing.Point(662, 12);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(184, 31);
             this.btnDelete.TabIndex = 28;
-            this.btnDelete.Text = "Supprimer le ticket";
+            this.btnDelete.Text = "&Supprimer le ticket";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -101,7 +124,7 @@
             "En attente",
             "Ouvert",
             "Fermé"});
-            this.cboStatus.Location = new System.Drawing.Point(87, 128);
+            this.cboStatus.Location = new System.Drawing.Point(388, 80);
             this.cboStatus.Name = "cboStatus";
             this.cboStatus.Size = new System.Drawing.Size(127, 28);
             this.cboStatus.TabIndex = 7;
@@ -109,11 +132,11 @@
             // 
             // btnUpdateSubject
             // 
-            this.btnUpdateSubject.Location = new System.Drawing.Point(402, 35);
+            this.btnUpdateSubject.Location = new System.Drawing.Point(654, 35);
             this.btnUpdateSubject.Name = "btnUpdateSubject";
             this.btnUpdateSubject.Size = new System.Drawing.Size(165, 31);
             this.btnUpdateSubject.TabIndex = 3;
-            this.btnUpdateSubject.Text = "Mettre à jour le sujet";
+            this.btnUpdateSubject.Text = "&Mettre à jour le sujet";
             this.btnUpdateSubject.UseVisualStyleBackColor = true;
             this.btnUpdateSubject.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -124,7 +147,7 @@
             "Faible",
             "Moyenne",
             "Élevé"});
-            this.cboPriority.Location = new System.Drawing.Point(87, 84);
+            this.cboPriority.Location = new System.Drawing.Point(87, 80);
             this.cboPriority.Name = "cboPriority";
             this.cboPriority.Size = new System.Drawing.Size(139, 28);
             this.cboPriority.TabIndex = 5;
@@ -134,13 +157,13 @@
             // 
             this.txtSubject.Location = new System.Drawing.Point(87, 37);
             this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(309, 26);
+            this.txtSubject.Size = new System.Drawing.Size(557, 26);
             this.txtSubject.TabIndex = 2;
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(24, 132);
+            this.lblStatus.Location = new System.Drawing.Point(329, 84);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(53, 20);
             this.lblStatus.TabIndex = 6;
@@ -149,7 +172,7 @@
             // lblPriority
             // 
             this.lblPriority.AutoSize = true;
-            this.lblPriority.Location = new System.Drawing.Point(24, 88);
+            this.lblPriority.Location = new System.Drawing.Point(24, 84);
             this.lblPriority.Name = "lblPriority";
             this.lblPriority.Size = new System.Drawing.Size(58, 20);
             this.lblPriority.TabIndex = 4;
@@ -171,7 +194,7 @@
             this.grpUser.Controls.Add(this.txtFirstnameUser);
             this.grpUser.Controls.Add(this.lblLastnameUser);
             this.grpUser.Controls.Add(this.lblFirstnameUser);
-            this.grpUser.Location = new System.Drawing.Point(438, 169);
+            this.grpUser.Location = new System.Drawing.Point(438, 150);
             this.grpUser.Name = "grpUser";
             this.grpUser.Size = new System.Drawing.Size(381, 162);
             this.grpUser.TabIndex = 18;
@@ -222,7 +245,7 @@
             this.grpSupportInfo.Controls.Add(this.lblLastnameSupport);
             this.grpSupportInfo.Controls.Add(this.txtFirstnameSupport);
             this.grpSupportInfo.Controls.Add(this.lblSupportFirstname);
-            this.grpSupportInfo.Location = new System.Drawing.Point(18, 169);
+            this.grpSupportInfo.Location = new System.Drawing.Point(18, 150);
             this.grpSupportInfo.Name = "grpSupportInfo";
             this.grpSupportInfo.Size = new System.Drawing.Size(378, 162);
             this.grpSupportInfo.TabIndex = 10;
@@ -300,38 +323,23 @@
             this.grpMessages.Text = "Messages";
             this.grpMessages.Enter += new System.EventHandler(this.grpMessages_Enter);
             // 
-            // lblEvaluation
+            // btnEnvoyer
             // 
-            this.lblEvaluation.AutoSize = true;
-            this.lblEvaluation.Location = new System.Drawing.Point(447, 88);
-            this.lblEvaluation.Name = "lblEvaluation";
-            this.lblEvaluation.Size = new System.Drawing.Size(83, 20);
-            this.lblEvaluation.TabIndex = 8;
-            this.lblEvaluation.Text = "Evaluation";
+            this.btnEnvoyer.Location = new System.Drawing.Point(677, 299);
+            this.btnEnvoyer.Name = "btnEnvoyer";
+            this.btnEnvoyer.Size = new System.Drawing.Size(145, 31);
+            this.btnEnvoyer.TabIndex = 27;
+            this.btnEnvoyer.Text = "&Envoyer";
+            this.btnEnvoyer.UseVisualStyleBackColor = true;
+            this.btnEnvoyer.Click += new System.EventHandler(this.btnEnvoyer_Click);
             // 
-            // cboEvaluation
+            // txtMessage
             // 
-            this.cboEvaluation.FormattingEnabled = true;
-            this.cboEvaluation.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cboEvaluation.Location = new System.Drawing.Point(536, 84);
-            this.cboEvaluation.Name = "cboEvaluation";
-            this.cboEvaluation.Size = new System.Drawing.Size(139, 28);
-            this.cboEvaluation.TabIndex = 9;
-            // 
-            // lstMessages
-            // 
-            this.lstMessages.FormattingEnabled = true;
-            this.lstMessages.ItemHeight = 20;
-            this.lstMessages.Location = new System.Drawing.Point(18, 39);
-            this.lstMessages.Name = "lstMessages";
-            this.lstMessages.Size = new System.Drawing.Size(801, 224);
-            this.lstMessages.TabIndex = 24;
+            this.txtMessage.Location = new System.Drawing.Point(98, 301);
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.Size = new System.Drawing.Size(577, 26);
+            this.txtMessage.TabIndex = 26;
+            this.txtMessage.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblMessage
             // 
@@ -342,23 +350,14 @@
             this.lblMessage.TabIndex = 25;
             this.lblMessage.Text = "Message";
             // 
-            // txtMessage
+            // lstMessages
             // 
-            this.txtMessage.Location = new System.Drawing.Point(98, 301);
-            this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(577, 26);
-            this.txtMessage.TabIndex = 26;
-            this.txtMessage.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // btnEnvoyer
-            // 
-            this.btnEnvoyer.Location = new System.Drawing.Point(677, 299);
-            this.btnEnvoyer.Name = "btnEnvoyer";
-            this.btnEnvoyer.Size = new System.Drawing.Size(145, 31);
-            this.btnEnvoyer.TabIndex = 27;
-            this.btnEnvoyer.Text = "Envoyer";
-            this.btnEnvoyer.UseVisualStyleBackColor = true;
-            this.btnEnvoyer.Click += new System.EventHandler(this.btnEnvoyer_Click);
+            this.lstMessages.FormattingEnabled = true;
+            this.lstMessages.ItemHeight = 20;
+            this.lstMessages.Location = new System.Drawing.Point(18, 39);
+            this.lstMessages.Name = "lstMessages";
+            this.lstMessages.Size = new System.Drawing.Size(801, 224);
+            this.lstMessages.TabIndex = 24;
             // 
             // frmTicket
             // 
@@ -368,6 +367,7 @@
             this.ClientSize = new System.Drawing.Size(885, 809);
             this.Controls.Add(this.grpMessages);
             this.Controls.Add(this.grpTicketInfo);
+            this.Controls.Add(this.btnDelete);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmTicket";
             this.Text = "Ticket";
