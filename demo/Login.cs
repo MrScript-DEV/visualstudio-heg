@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using scriptsupport.services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,22 +21,53 @@ namespace demo
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
+            string email = txtEmail.Text.Trim();
+            string password = txtPassword.Text;
+
+            lblError.Visible = false;
+
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
                 lblError.Text = "Veuillez remplir tous les champs.";
                 lblError.Visible = true;
+                return;
             }
-            else
+
+            btnLogin.Enabled = false;
+            Cursor = Cursors.WaitCursor;
+
+            try
             {
-                frmDashboard dashboard = new frmDashboard();
-                this.Hide();
-                lblError.Visible = false;
-                txtEmail.Text = "";
-                txtPassword.Text = "";
-                dashboard.ShowDialog();
-                this.Show();
+                var auth = new AuthService();
+                var (success, message) = await auth.Login(email, password);
+
+                if (success)
+                {
+                    frmDashboard dashboard = new frmDashboard();
+                    this.Hide();
+                    lblError.Visible = false;
+                    txtEmail.Text = "";
+                    txtPassword.Text = "";
+                    dashboard.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    lblError.Text = message;
+                    lblError.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = "Erreur inattendue : " + ex.Message;
+                lblError.Visible = true;
+            }
+            finally
+            {
+                btnLogin.Enabled = true;
+                Cursor = Cursors.Default;
             }
         }
 

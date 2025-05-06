@@ -1,4 +1,5 @@
-﻿using System;
+﻿using scriptsupport.services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,6 +58,17 @@ namespace demo
         private void frmDashboard_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private async void tsmiLogout_Click(object sender, EventArgs e)
+        {
+            var auth = new AuthService();
+            var (success, msg) = await auth.Logout();
+
+            if (success)
+            {
+                this.Hide();
+            }
         }
     }
 }

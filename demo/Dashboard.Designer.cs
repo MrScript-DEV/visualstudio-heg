@@ -46,6 +46,7 @@
             this.lblNbOpenTickets = new System.Windows.Forms.Label();
             this.lblClosedTickets = new System.Windows.Forms.Label();
             this.lblOpenTickets = new System.Windows.Forms.Label();
+            this.tsmiLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.grpUsers.SuspendLayout();
             this.grpStats.SuspendLayout();
@@ -57,10 +58,11 @@
             this.msMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiManageTickets,
-            this.tsmiManageUsers});
+            this.tsmiManageUsers,
+            this.tsmiLogout});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
-            this.msMenu.Size = new System.Drawing.Size(780, 33);
+            this.msMenu.Size = new System.Drawing.Size(780, 36);
             this.msMenu.TabIndex = 0;
             this.msMenu.Text = "menuStrip1";
             this.msMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -68,14 +70,14 @@
             // tsmiManageTickets
             // 
             this.tsmiManageTickets.Name = "tsmiManageTickets";
-            this.tsmiManageTickets.Size = new System.Drawing.Size(176, 29);
+            this.tsmiManageTickets.Size = new System.Drawing.Size(176, 30);
             this.tsmiManageTickets.Text = "Gestion des &tickets";
             this.tsmiManageTickets.Click += new System.EventHandler(this.gestionDesTicketsToolStripMenuItem_Click);
             // 
             // tsmiManageUsers
             // 
             this.tsmiManageUsers.Name = "tsmiManageUsers";
-            this.tsmiManageUsers.Size = new System.Drawing.Size(210, 29);
+            this.tsmiManageUsers.Size = new System.Drawing.Size(210, 30);
             this.tsmiManageUsers.Text = "Gestion des &utilisateurs";
             this.tsmiManageUsers.Click += new System.EventHandler(this.gestionDesUtilisateursToolStripMenuItem_Click);
             // 
@@ -231,6 +233,13 @@
             this.lblOpenTickets.Text = "Tickets ouverts :";
             this.lblOpenTickets.Click += new System.EventHandler(this.label1_Click);
             // 
+            // tsmiLogout
+            // 
+            this.tsmiLogout.Name = "tsmiLogout";
+            this.tsmiLogout.Size = new System.Drawing.Size(149, 30);
+            this.tsmiLogout.Text = "Se déconencter";
+            this.tsmiLogout.Click += new System.EventHandler(this.tsmiLogout_Click);
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -276,5 +285,6 @@
         private System.Windows.Forms.Label lblNbOpenTickets;
         private System.Windows.Forms.Label lblClosedTickets;
         private System.Windows.Forms.Label lblOpenTickets;
+        private System.Windows.Forms.ToolStripMenuItem tsmiLogout;
     }
 }
