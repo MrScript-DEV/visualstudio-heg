@@ -1,4 +1,5 @@
-﻿using System;
+﻿using scriptsupport.services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,19 +17,14 @@ namespace demo
         {
             InitializeComponent();
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-
-            string[] row = { "1", "John Doe", "Problème de connexion", "Moyenne", "5", "Fermé", "3"};
-
-            dgvTickets.Rows.Add(row);
-
         }
 
-        private void frmManageTicket_Load(object sender, EventArgs e)
+        private async void frmManageTicket_Load(object sender, EventArgs e)
         {
-
+            await LoadTickets();
         }
 
-        private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -36,6 +32,35 @@ namespace demo
                 string id = row.Cells["id"].Value.ToString();
                 frmTicket ticket = new frmTicket(id);
                 ticket.ShowDialog();
+                await LoadTickets();
+            }
+        }
+
+        private async Task LoadTickets()
+        {
+            var service = new TicketService();
+            var response = await service.GetAllTickets();
+
+            if (response.success)
+            {
+                dgvTickets.Rows.Clear();
+
+                foreach (var ticket in response.data)
+                {
+                    dgvTickets.Rows.Add(
+                        ticket.id.ToString(),
+                        ticket.user.first_name + ' ' + ticket.user.last_name,
+                        ticket.subject,
+                        ticket.priority?.name ?? "",
+                        ticket.priority?.level.ToString() ?? "",
+                        ticket.status?.name ?? "",
+                        ticket.rating.ToString()
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show("Erreur : " + response.message);
             }
         }
     }

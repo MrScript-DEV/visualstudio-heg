@@ -7,39 +7,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using scriptsupport.services;
+using scriptsupport;
+using scriptsupport.Request.User;
 
 namespace demo
 {
     public partial class frmUserDetails: Form
     {
         private bool isNew;
+        private string userId;
 
 
-        public frmUserDetails(string id = "", string firstname = "", string lastname = "", string email = "", string role = "Utilisateur", bool isNew = true)
+        public frmUserDetails(string id = "", bool isNew = true)
         {
             InitializeComponent();
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 
             this.isNew = isNew;
+            this.userId = id;
 
-            txtFirstname.Text = firstname;
-            txtLastname.Text = lastname;
-            txtEmail.Text = email;
-            cboRole.Text = role;
+            txtFirstname.Text = "";
+            txtLastname.Text = "";
+            txtEmail.Text = "";
+            cboRole.Text = "User";
+
+            txtPassword.Visible = isNew;
+            txtPasswordConfirm.Visible = isNew;
+            lblPassword.Visible = isNew;
+            lblPasswordConfirm.Visible = isNew;
 
             grpUserTickets.Visible = !isNew;
             dgvUserTickets.Visible = !isNew;
             btnCreate.Visible = isNew;
             btnUpdate.Visible = !isNew;
             btnDelete.Visible = !isNew;
-
-            if (!isNew)
-            {
-
-                string[] row = { "1", "Problème de connexion", "Moyenne", "5", "Fermé", "3" };
-
-                dgvUserTickets.Rows.Add(row);
-            }
 
             txtFirstname.TextChanged += new EventHandler(InputFieldsChanged);
             txtLastname.TextChanged += new EventHandler(InputFieldsChanged);
@@ -54,9 +56,50 @@ namespace demo
             checkDataIsValid();
         }
 
-        private void frmUserDetails_Load(object sender, EventArgs e)
+        private async void frmUserDetails_Load(object sender, EventArgs e)
         {
+            if (!isNew)
+            {
+                var service = new UserService();
+                if (int.TryParse(userId, out int id))
+                {
+                    var response = await service.GetUserById(id);
 
+                    if (response.success && response.data != null)
+                    {
+                        var user = response.data;
+
+                        txtFirstname.Text = user.first_name;
+                        txtLastname.Text = user.last_name;
+                        txtEmail.Text = user.email;
+
+                        cboRole.Text = user.roles?.FirstOrDefault() ?? "";
+
+                        dgvUserTickets.Rows.Clear();
+                        if (user.tickets != null)
+                        {
+                            foreach (var ticket in user.tickets)
+                            {
+                                dgvUserTickets.Rows.Add(
+                                    ticket.id.ToString(),
+                                    ticket.subject,
+                                    ticket.priority?.name ?? "",
+                                    ticket.priority?.level.ToString() ?? "",
+                                    ticket.status?.name ?? "",
+                                    ticket.rating.ToString()
+                                );
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erreur lors du chargement de l'utilisateur : " + response.message);
+                        this.Close();
+                    }
+                }
+            }
+
+            checkDataIsValid();
         }
 
         private void checkDataIsValid()
@@ -71,23 +114,79 @@ namespace demo
                 btnCreate.Enabled = true;
                 btnUpdate.Enabled = true;
             }
+
+            if(isNew)
+            {
+                if (txtPassword.Text == "" || txtPasswordConfirm.Text == "")
+                {
+                    btnCreate.Enabled = false;
+                }
+                else
+                {
+                    btnCreate.Enabled = true;
+                }
+            }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private async void btnUpdate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Utilisateur modifié avec succès!", "Gestion utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (!int.TryParse(userId, out int id))
+            {
+                MessageBox.Show("ID utilisateur invalide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            this.Close();
+            var updateRequest = new UserUpdateRequest
+            {
+                first_name = txtFirstname.Text.Trim(),
+                last_name = txtLastname.Text.Trim(),
+                email = txtEmail.Text.Trim(),
+                role = cboRole.Text.Trim()
+            };
+
+            var service = new UserService();
+            var response = await service.UpdateUser(id, updateRequest);
+
+            if (response.success)
+            {
+                MessageBox.Show("Utilisateur modifié avec succès !", "Gestion utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Erreur : " + response.message, "Échec de la modification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private async void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet utilisateur ?", "Confirmation de suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show(
+                "Êtes-vous sûr de vouloir supprimer cet utilisateur ?",
+                "Confirmation de suppression",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
 
             if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Utilisateur supprimé avec succès!", "Gestion utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                if (!int.TryParse(userId, out int id))
+                {
+                    MessageBox.Show("ID utilisateur invalide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var service = new UserService();
+                var response = await service.SoftDeleteUser(id);
+
+                if (response.success)
+                {
+                    MessageBox.Show("Utilisateur supprimé avec succès !", "Gestion utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Erreur : " + response.message, "Échec de la suppression", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -106,11 +205,36 @@ namespace demo
             }
         }
 
-        private void btnCreate_Click_1(object sender, EventArgs e)
+        private async void btnCreate_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Utilisateur créé avec succès!", "Gestion utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (txtPassword.Text != txtPasswordConfirm.Text)
+            {
+                MessageBox.Show("Les mots de passe ne correspondent pas.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            this.Close();
+            var request = new UserCreateRequest
+            {
+                first_name = txtFirstname.Text.Trim(),
+                last_name = txtLastname.Text.Trim(),
+                email = txtEmail.Text.Trim(),
+                role = cboRole.Text.Trim(),
+                password = txtPassword.Text,
+                password_confirmation = txtPasswordConfirm.Text
+            };
+
+            var service = new UserService();
+            var response = await service.CreateUser(request);
+
+            if (response.success)
+            {
+                MessageBox.Show("Utilisateur créé avec succès!", "Gestion utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Erreur : " + response.message, "Échec de la création", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

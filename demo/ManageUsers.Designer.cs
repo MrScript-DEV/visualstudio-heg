@@ -30,14 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManageUsers));
             this.dgvUsers = new System.Windows.Forms.DataGridView();
+            this.btnAddUser = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nbTicketInProgress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nbTicketsClose = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAddUser = new System.Windows.Forms.Button();
+            this.nbTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboRoleFilter = new System.Windows.Forms.ComboBox();
+            this.lblFilter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,8 +57,7 @@
             this.lastname,
             this.email,
             this.role,
-            this.nbTicketInProgress,
-            this.nbTicketsClose});
+            this.nbTicket});
             this.dgvUsers.Location = new System.Drawing.Point(12, 71);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
@@ -67,6 +67,16 @@
             this.dgvUsers.TabIndex = 1;
             this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
+            // 
+            // btnAddUser
+            // 
+            this.btnAddUser.Location = new System.Drawing.Point(12, 12);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(175, 52);
+            this.btnAddUser.TabIndex = 0;
+            this.btnAddUser.Text = "&Ajouter un utilisateur";
+            this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.button1_Click);
             // 
             // id
             // 
@@ -107,31 +117,36 @@
             this.role.ReadOnly = true;
             this.role.Width = 78;
             // 
-            // nbTicketInProgress
+            // nbTicket
             // 
-            this.nbTicketInProgress.HeaderText = "Nb tickets en cours";
-            this.nbTicketInProgress.MinimumWidth = 8;
-            this.nbTicketInProgress.Name = "nbTicketInProgress";
-            this.nbTicketInProgress.ReadOnly = true;
-            this.nbTicketInProgress.Width = 130;
+            this.nbTicket.HeaderText = "Nb tickets";
+            this.nbTicket.MinimumWidth = 8;
+            this.nbTicket.Name = "nbTicket";
+            this.nbTicket.ReadOnly = true;
+            this.nbTicket.Width = 115;
             // 
-            // nbTicketsClose
+            // cboRoleFilter
             // 
-            this.nbTicketsClose.HeaderText = "Nb tickets fermé";
-            this.nbTicketsClose.MinimumWidth = 8;
-            this.nbTicketsClose.Name = "nbTicketsClose";
-            this.nbTicketsClose.ReadOnly = true;
-            this.nbTicketsClose.Width = 147;
+            this.cboRoleFilter.FormattingEnabled = true;
+            this.cboRoleFilter.Items.AddRange(new object[] {
+            "Tous",
+            "Admin",
+            "Support",
+            "User"});
+            this.cboRoleFilter.Location = new System.Drawing.Point(652, 25);
+            this.cboRoleFilter.Name = "cboRoleFilter";
+            this.cboRoleFilter.Size = new System.Drawing.Size(200, 28);
+            this.cboRoleFilter.TabIndex = 2;
+            this.cboRoleFilter.SelectedIndexChanged += new System.EventHandler(this.cboRoleFilter_SelectedIndexChanged_1);
             // 
-            // btnAddUser
+            // lblFilter
             // 
-            this.btnAddUser.Location = new System.Drawing.Point(12, 12);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(175, 52);
-            this.btnAddUser.TabIndex = 0;
-            this.btnAddUser.Text = "&Ajouter un utilisateur";
-            this.btnAddUser.UseVisualStyleBackColor = true;
-            this.btnAddUser.Click += new System.EventHandler(this.button1_Click);
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Location = new System.Drawing.Point(536, 28);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(106, 20);
+            this.lblFilter.TabIndex = 3;
+            this.lblFilter.Text = "Filtrer par role";
             // 
             // frmManageUsers
             // 
@@ -139,6 +154,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(864, 589);
+            this.Controls.Add(this.lblFilter);
+            this.Controls.Add(this.cboRoleFilter);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.dgvUsers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -148,6 +165,7 @@
             this.Load += new System.EventHandler(this.frmManageUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -160,7 +178,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lastname;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn role;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nbTicketInProgress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nbTicketsClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nbTicket;
+        private System.Windows.Forms.ComboBox cboRoleFilter;
+        private System.Windows.Forms.Label lblFilter;
     }
 }

@@ -24,6 +24,7 @@ namespace scriptsupport.services
                 if (response.success && response.data != null && !string.IsNullOrEmpty(response.data.token))
                 {
                     ApiConfig.Token = response.data.token;
+                    SessionManager.CurrentUser = response.data.user;
                     return (true, response.message ?? "Connexion réussie.");
                 }
 
@@ -41,6 +42,7 @@ namespace scriptsupport.services
             {
                 var response = await _api.SendRequestAsync<object>("logout", HttpMethod.Post, null, true);
                 ApiConfig.Token = null;
+                SessionManager.CurrentUser = null;
 
                 return (response.success, response.message ?? "Déconnexion réussie.");
             }

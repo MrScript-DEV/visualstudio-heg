@@ -32,6 +32,7 @@
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiManageTickets = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiManageUsers = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.grpUsers = new System.Windows.Forms.GroupBox();
             this.lblNbSupport = new System.Windows.Forms.Label();
             this.lblSupport = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.lblNbOpenTickets = new System.Windows.Forms.Label();
             this.lblClosedTickets = new System.Windows.Forms.Label();
             this.lblOpenTickets = new System.Windows.Forms.Label();
-            this.tsmiLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.grpUsers.SuspendLayout();
             this.grpStats.SuspendLayout();
@@ -70,16 +70,23 @@
             // tsmiManageTickets
             // 
             this.tsmiManageTickets.Name = "tsmiManageTickets";
-            this.tsmiManageTickets.Size = new System.Drawing.Size(176, 30);
+            this.tsmiManageTickets.Size = new System.Drawing.Size(176, 32);
             this.tsmiManageTickets.Text = "Gestion des &tickets";
             this.tsmiManageTickets.Click += new System.EventHandler(this.gestionDesTicketsToolStripMenuItem_Click);
             // 
             // tsmiManageUsers
             // 
             this.tsmiManageUsers.Name = "tsmiManageUsers";
-            this.tsmiManageUsers.Size = new System.Drawing.Size(210, 30);
+            this.tsmiManageUsers.Size = new System.Drawing.Size(210, 32);
             this.tsmiManageUsers.Text = "Gestion des &utilisateurs";
             this.tsmiManageUsers.Click += new System.EventHandler(this.gestionDesUtilisateursToolStripMenuItem_Click);
+            // 
+            // tsmiLogout
+            // 
+            this.tsmiLogout.Name = "tsmiLogout";
+            this.tsmiLogout.Size = new System.Drawing.Size(149, 32);
+            this.tsmiLogout.Text = "Se déconnecter";
+            this.tsmiLogout.Click += new System.EventHandler(this.tsmiLogout_Click);
             // 
             // grpUsers
             // 
@@ -232,13 +239,6 @@
             this.lblOpenTickets.TabIndex = 1;
             this.lblOpenTickets.Text = "Tickets ouverts :";
             this.lblOpenTickets.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // tsmiLogout
-            // 
-            this.tsmiLogout.Name = "tsmiLogout";
-            this.tsmiLogout.Size = new System.Drawing.Size(149, 30);
-            this.tsmiLogout.Text = "Se déconencter";
-            this.tsmiLogout.Click += new System.EventHandler(this.tsmiLogout_Click);
             // 
             // frmDashboard
             // 

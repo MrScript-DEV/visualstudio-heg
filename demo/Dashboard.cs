@@ -1,4 +1,5 @@
-﻿using scriptsupport.services;
+﻿using scriptsupport.api;
+using scriptsupport.services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,7 +58,15 @@ namespace demo
 
         private void frmDashboard_Load(object sender, EventArgs e)
         {
+            if (!SessionManager.CurrentUser.IsAdmin)
+            {
+                tsmiManageUsers.Visible = false;
+            }
 
+            if (!SessionManager.CurrentUser.IsAdmin && !SessionManager.CurrentUser.IsSupport)
+            {
+                tsmiManageTickets.Visible = false;
+            }
         }
 
         private async void tsmiLogout_Click(object sender, EventArgs e)

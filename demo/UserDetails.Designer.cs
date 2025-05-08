@@ -50,6 +50,10 @@
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evaluation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpUserTickets = new System.Windows.Forms.GroupBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblPasswordConfirm = new System.Windows.Forms.Label();
+            this.txtPasswordConfirm = new System.Windows.Forms.TextBox();
             this.grpUsersDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserTickets)).BeginInit();
             this.grpUserTickets.SuspendLayout();
@@ -78,6 +82,10 @@
             // 
             // grpUsersDetails
             // 
+            this.grpUsersDetails.Controls.Add(this.lblPasswordConfirm);
+            this.grpUsersDetails.Controls.Add(this.txtPasswordConfirm);
+            this.grpUsersDetails.Controls.Add(this.lblPassword);
+            this.grpUsersDetails.Controls.Add(this.txtPassword);
             this.grpUsersDetails.Controls.Add(this.btnCreate);
             this.grpUsersDetails.Controls.Add(this.btnDelete);
             this.grpUsersDetails.Controls.Add(this.cboRole);
@@ -91,27 +99,27 @@
             this.grpUsersDetails.Controls.Add(this.txtEmail);
             this.grpUsersDetails.Location = new System.Drawing.Point(12, 21);
             this.grpUsersDetails.Name = "grpUsersDetails";
-            this.grpUsersDetails.Size = new System.Drawing.Size(436, 386);
+            this.grpUsersDetails.Size = new System.Drawing.Size(436, 523);
             this.grpUsersDetails.TabIndex = 0;
             this.grpUsersDetails.TabStop = false;
             this.grpUsersDetails.Text = "Informations";
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(133, 306);
+            this.btnCreate.Location = new System.Drawing.Point(128, 440);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(178, 52);
-            this.btnCreate.TabIndex = 10;
+            this.btnCreate.TabIndex = 14;
             this.btnCreate.Text = "&Créer";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click_1);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(235, 306);
+            this.btnDelete.Location = new System.Drawing.Point(230, 440);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(178, 52);
-            this.btnDelete.TabIndex = 11;
+            this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "&Supprimer";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -122,7 +130,7 @@
             this.cboRole.Items.AddRange(new object[] {
             "Admin",
             "Support",
-            "Utilisateur"});
+            "User"});
             this.cboRole.Location = new System.Drawing.Point(186, 228);
             this.cboRole.Name = "cboRole";
             this.cboRole.Size = new System.Drawing.Size(227, 28);
@@ -130,10 +138,10 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(24, 306);
+            this.btnUpdate.Location = new System.Drawing.Point(19, 440);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(178, 52);
-            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.TabIndex = 13;
             this.btnUpdate.Text = "&Mettre à jour";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -192,8 +200,8 @@
             this.dgvUserTickets.ReadOnly = true;
             this.dgvUserTickets.RowHeadersWidth = 62;
             this.dgvUserTickets.RowTemplate.Height = 28;
-            this.dgvUserTickets.Size = new System.Drawing.Size(815, 349);
-            this.dgvUserTickets.TabIndex = 13;
+            this.dgvUserTickets.Size = new System.Drawing.Size(815, 483);
+            this.dgvUserTickets.TabIndex = 17;
             this.dgvUserTickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserTickets_CellContentClick);
             // 
             // id
@@ -249,10 +257,44 @@
             this.grpUserTickets.Controls.Add(this.dgvUserTickets);
             this.grpUserTickets.Location = new System.Drawing.Point(464, 21);
             this.grpUserTickets.Name = "grpUserTickets";
-            this.grpUserTickets.Size = new System.Drawing.Size(852, 386);
-            this.grpUserTickets.TabIndex = 12;
+            this.grpUserTickets.Size = new System.Drawing.Size(852, 523);
+            this.grpUserTickets.TabIndex = 16;
             this.grpUserTickets.TabStop = false;
             this.grpUserTickets.Text = "Tickets";
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(54, 291);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(105, 20);
+            this.lblPassword.TabIndex = 9;
+            this.lblPassword.Text = "Mot de passe";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(186, 288);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(227, 26);
+            this.txtPassword.TabIndex = 10;
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // lblPasswordConfirm
+            // 
+            this.lblPasswordConfirm.AutoSize = true;
+            this.lblPasswordConfirm.Location = new System.Drawing.Point(54, 345);
+            this.lblPasswordConfirm.Name = "lblPasswordConfirm";
+            this.lblPasswordConfirm.Size = new System.Drawing.Size(99, 20);
+            this.lblPasswordConfirm.TabIndex = 11;
+            this.lblPasswordConfirm.Text = "Confirmation";
+            // 
+            // txtPasswordConfirm
+            // 
+            this.txtPasswordConfirm.Location = new System.Drawing.Point(186, 342);
+            this.txtPasswordConfirm.Name = "txtPasswordConfirm";
+            this.txtPasswordConfirm.Size = new System.Drawing.Size(227, 26);
+            this.txtPasswordConfirm.TabIndex = 12;
+            this.txtPasswordConfirm.UseSystemPasswordChar = true;
             // 
             // frmUserDetails
             // 
@@ -260,7 +302,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1334, 413);
+            this.ClientSize = new System.Drawing.Size(1334, 556);
             this.Controls.Add(this.grpUserTickets);
             this.Controls.Add(this.grpUsersDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -299,5 +341,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nbMessages;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn evaluation;
+        private System.Windows.Forms.Label lblPasswordConfirm;
+        private System.Windows.Forms.TextBox txtPasswordConfirm;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TextBox txtPassword;
     }
 }
