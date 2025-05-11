@@ -33,7 +33,7 @@
             this.cboEvaluation = new System.Windows.Forms.ComboBox();
             this.lblEvaluation = new System.Windows.Forms.Label();
             this.cboStatus = new System.Windows.Forms.ComboBox();
-            this.btnUpdateSubject = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.cboPriority = new System.Windows.Forms.ComboBox();
             this.txtSubject = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.grpTicketInfo.Controls.Add(this.cboEvaluation);
             this.grpTicketInfo.Controls.Add(this.lblEvaluation);
             this.grpTicketInfo.Controls.Add(this.cboStatus);
-            this.grpTicketInfo.Controls.Add(this.btnUpdateSubject);
+            this.grpTicketInfo.Controls.Add(this.btnUpdate);
             this.grpTicketInfo.Controls.Add(this.cboPriority);
             this.grpTicketInfo.Controls.Add(this.txtSubject);
             this.grpTicketInfo.Controls.Add(this.lblStatus);
@@ -86,6 +86,7 @@
             // 
             // cboEvaluation
             // 
+            this.cboEvaluation.Enabled = false;
             this.cboEvaluation.FormattingEnabled = true;
             this.cboEvaluation.Items.AddRange(new object[] {
             "0",
@@ -98,6 +99,7 @@
             this.cboEvaluation.Name = "cboEvaluation";
             this.cboEvaluation.Size = new System.Drawing.Size(139, 28);
             this.cboEvaluation.TabIndex = 9;
+            this.cboEvaluation.SelectedIndexChanged += new System.EventHandler(this.cboEvaluation_SelectedIndexChanged);
             // 
             // lblEvaluation
             // 
@@ -121,15 +123,15 @@
             this.cboStatus.TabIndex = 7;
             this.cboStatus.SelectedIndexChanged += new System.EventHandler(this.cboStatus_SelectedIndexChanged);
             // 
-            // btnUpdateSubject
+            // btnUpdate
             // 
-            this.btnUpdateSubject.Location = new System.Drawing.Point(654, 35);
-            this.btnUpdateSubject.Name = "btnUpdateSubject";
-            this.btnUpdateSubject.Size = new System.Drawing.Size(165, 31);
-            this.btnUpdateSubject.TabIndex = 3;
-            this.btnUpdateSubject.Text = "&Mettre à jour le sujet";
-            this.btnUpdateSubject.UseVisualStyleBackColor = true;
-            this.btnUpdateSubject.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.Location = new System.Drawing.Point(654, 35);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(165, 31);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "&Mettre à jour";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // cboPriority
             // 
@@ -199,7 +201,6 @@
             this.txtLastnameUser.ReadOnly = true;
             this.txtLastnameUser.Size = new System.Drawing.Size(237, 26);
             this.txtLastnameUser.TabIndex = 22;
-            this.txtLastnameUser.Text = "Blade";
             // 
             // txtFirstnameUser
             // 
@@ -208,7 +209,6 @@
             this.txtFirstnameUser.ReadOnly = true;
             this.txtFirstnameUser.Size = new System.Drawing.Size(237, 26);
             this.txtFirstnameUser.TabIndex = 20;
-            this.txtFirstnameUser.Text = "Paul";
             // 
             // lblLastnameUser
             // 
@@ -255,14 +255,11 @@
             // cboSupportAgent
             // 
             this.cboSupportAgent.FormattingEnabled = true;
-            this.cboSupportAgent.Items.AddRange(new object[] {
-            "Mark Evans",
-            "Martin Lupin",
-            "Samir Henry"});
             this.cboSupportAgent.Location = new System.Drawing.Point(110, 38);
             this.cboSupportAgent.Name = "cboSupportAgent";
             this.cboSupportAgent.Size = new System.Drawing.Size(237, 28);
             this.cboSupportAgent.TabIndex = 12;
+            this.cboSupportAgent.SelectedIndexChanged += new System.EventHandler(this.cboSupportAgent_SelectedIndexChanged);
             // 
             // txtLastnameSupport
             // 
@@ -271,7 +268,6 @@
             this.txtLastnameSupport.ReadOnly = true;
             this.txtLastnameSupport.Size = new System.Drawing.Size(237, 26);
             this.txtLastnameSupport.TabIndex = 16;
-            this.txtLastnameSupport.Text = "Evans";
             // 
             // lblLastnameSupport
             // 
@@ -289,7 +285,6 @@
             this.txtFirstnameSupport.ReadOnly = true;
             this.txtFirstnameSupport.Size = new System.Drawing.Size(237, 26);
             this.txtFirstnameSupport.TabIndex = 14;
-            this.txtFirstnameSupport.Text = "Mark";
             // 
             // lblSupportFirstname
             // 
@@ -405,7 +400,7 @@
         private System.Windows.Forms.TextBox txtSubject;
         private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.ComboBox cboPriority;
-        private System.Windows.Forms.Button btnUpdateSubject;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox grpMessages;
         private System.Windows.Forms.Label lblChangeSupportAgent;

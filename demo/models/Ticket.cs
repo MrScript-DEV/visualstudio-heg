@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace scriptsupport.models
 {
@@ -23,6 +24,7 @@ namespace scriptsupport.models
 
         public User user { get; set; }
         public User assigned_to { get; set; }
+        public List<Message> messages { get; set; }
 
     }
 }

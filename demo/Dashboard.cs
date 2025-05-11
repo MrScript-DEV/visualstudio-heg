@@ -25,20 +25,22 @@ namespace demo
 
         }
 
-        private void gestionDesUtilisateursToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void gestionDesUtilisateursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmManageUsers manageUsers = new frmManageUsers();
             this.Hide();
             manageUsers.ShowDialog();
             this.Show();
+            await LoadDashboardStats();
         }
 
-        private void gestionDesTicketsToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void gestionDesTicketsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmManageTicket manageTickets = new frmManageTicket();
             this.Hide();
             manageTickets.ShowDialog();
             this.Show();
+            await LoadDashboardStats();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -56,7 +58,7 @@ namespace demo
 
         }
 
-        private void frmDashboard_Load(object sender, EventArgs e)
+        private async void frmDashboard_Load(object sender, EventArgs e)
         {
             if (!SessionManager.CurrentUser.IsAdmin)
             {
@@ -67,6 +69,8 @@ namespace demo
             {
                 tsmiManageTickets.Visible = false;
             }
+
+            await LoadDashboardStats();
         }
 
         private async void tsmiLogout_Click(object sender, EventArgs e)
@@ -77,6 +81,41 @@ namespace demo
             if (success)
             {
                 this.Hide();
+            }
+        }
+
+        private async Task LoadDashboardStats()
+        {
+            var ticketService = new TicketService();
+            var userService = new UserService();
+
+            var ticketsResponse = await ticketService.GetAllTickets();
+            var usersResponse = await userService.GetAllUsers();
+
+            if (ticketsResponse.success && usersResponse.success)
+            {
+                var tickets = ticketsResponse.data;
+                var users = usersResponse.data;
+
+                int totalOuverts = tickets.Count(t => t.status?.name == "Ouvert");
+                int totalFermes = tickets.Count(t => t.status?.name == "Fermé");
+                int totalEnAttente = tickets.Count(t => t.status?.name == "En attente");
+
+                int totalAdmins = users.Count(u => u.roles != null && u.roles.Any(r => r == "Admin"));
+                int totalSupports = users.Count(u => u.roles != null && u.roles.Any(r => r == "Support"));
+                int totalUsers = users.Count(u => u.roles != null && u.roles.Any(r => r == "User"));
+
+                lblNbOpenTickets.Text = totalOuverts.ToString();
+                lblNbCloseTickets.Text = totalFermes.ToString();
+                lblNbPendingTickets.Text = totalEnAttente.ToString();
+
+                lblNbAdmin.Text = totalAdmins.ToString();
+                lblNbSupport.Text = totalSupports.ToString();
+                lblNbUsers.Text = totalUsers.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Erreur lors du chargement des statistiques.");
             }
         }
     }

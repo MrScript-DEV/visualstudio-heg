@@ -34,7 +34,6 @@
             this.user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nbMessages = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evaluation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
@@ -54,7 +53,6 @@
             this.user,
             this.subject,
             this.priority,
-            this.nbMessages,
             this.status,
             this.evaluation});
             this.dgvTickets.Location = new System.Drawing.Point(12, 12);
@@ -98,14 +96,6 @@
             this.priority.ReadOnly = true;
             this.priority.Width = 94;
             // 
-            // nbMessages
-            // 
-            this.nbMessages.HeaderText = "Nb. Messages";
-            this.nbMessages.MinimumWidth = 8;
-            this.nbMessages.Name = "nbMessages";
-            this.nbMessages.ReadOnly = true;
-            this.nbMessages.Width = 146;
-            // 
             // status
             // 
             this.status.HeaderText = "Statut";
@@ -146,7 +136,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn user;
         private System.Windows.Forms.DataGridViewTextBoxColumn subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn priority;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nbMessages;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn evaluation;
     }

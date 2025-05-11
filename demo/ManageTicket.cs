@@ -52,7 +52,6 @@ namespace demo
                         ticket.user.first_name + ' ' + ticket.user.last_name,
                         ticket.subject,
                         ticket.priority?.name ?? "",
-                        ticket.priority?.level.ToString() ?? "",
                         ticket.status?.name ?? "",
                         ticket.rating.ToString()
                     );
