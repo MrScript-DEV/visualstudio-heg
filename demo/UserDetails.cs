@@ -30,7 +30,7 @@ namespace demo
             txtFirstname.Text = "";
             txtLastname.Text = "";
             txtEmail.Text = "";
-            cboRole.Text = "User";
+            cboRole.Text = "";
 
             txtPassword.Visible = isNew;
             txtPasswordConfirm.Visible = isNew;
